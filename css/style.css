@@ -9,8 +9,9 @@ h1{
     font-weight: 900;
     color: white;
     text-align: center;
-    /*font-size: 3em;*/
+    font-size: 4em;
     margin-top: 0;
+    padding-top: 400px;
 }
 
 .home{
