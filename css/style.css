@@ -4,6 +4,16 @@ body{
     box-sizing: border-box;
 }
 
+section{
+    height: 100vh;
+}
+
+.home{
+    background-image: url(../img/img1.jpeg);
+    background-size: cover;
+    background-position: center;
+}
+
 h1{
     font-family:"times new roman", sans-serif;
     font-weight: 900;
@@ -12,12 +22,4 @@ h1{
     font-size: 4em;
     margin-top: 0;
     padding-top: 400px;
-}
-
-.home{
-    background-image: url(../img/img1.jpeg);
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-
 }
