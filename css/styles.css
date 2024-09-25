@@ -9,7 +9,16 @@ section{
     background-size: cover;
     background-position: center;
 }
+.barra{
+    /*display: flex;*/
+    /*justify-content: space-between;*/
+    /*align-items: center;*/
+    background-color: rgba(255, 255, 255, 0.585);
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
 
+}
 .home{
     background-image: url(../img/img1.jpeg);
     text-align: center;
