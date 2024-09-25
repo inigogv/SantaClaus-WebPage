@@ -50,15 +50,7 @@ h2{
     padding-top: 60px;
 }
 
-.foto {
-    display: inline-block;
-}
-
-.texto{
-    display: inline-block;
+.img2{
     width: 100%;
-    text-align: center;
-    color: white;
-    font-family:"times new roman", sans-serif;
-    padding-top: 20px;
+    height: 100%;
 }
