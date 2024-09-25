@@ -19,25 +19,25 @@ section{
     width: 100%;
 
 }
-.home{
+#home{
     background-image: url(../img/img1.jpeg);
     text-align: center;
     justify-content: center;
 }
 
-.second{
+#second{
     background-color: crimson;
 }
 
-.third{
+#third{
     background-color: rgb(220, 182, 182);
 }
 
-.fourth{
+#fourth{
     background-color: crimson;
 }
 
-.fifth{
+#fifth{
     background-color: rgb(220, 182, 182);
 }
 
