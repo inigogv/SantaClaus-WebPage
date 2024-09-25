@@ -12,6 +12,8 @@ section{
 
 .home{
     background-image: url(../img/img1.jpeg);
+    text-align: center;
+    justify-content: center;
 }
 
 .second{
@@ -34,12 +36,10 @@ h1{
     font-family:"times new roman", sans-serif;
     font-weight: 900;
     color: white;
-    text-align: center;
     font-size: 4em;
-    margin-top: 0;
-    padding-top: 350px;
+    margin: auto;
+    padding-top: 300px;
 }
-
 
 h2{
     font-family:"times new roman", sans-serif;
