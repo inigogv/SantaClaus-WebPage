@@ -99,18 +99,6 @@ h1{
     background-color: crimson;
 }
 
-#third_page{
-    background-color: rgb(220, 182, 182);
-}
-
-#fourth_page{
-    background-color: crimson;
-}
-
-#fifth_page{
-    background-color: rgb(220, 182, 182);
-}
-
 h2{
     font-family: "Merriweather", sans-serif;
     font-weight: 700;
@@ -129,8 +117,8 @@ h2{
 }
 
 .img2{
-    width: 30%;
-    height: 40%;
+    width: 35%;
+    height: 45%;
     padding-left: 20px;
 }
 
@@ -148,14 +136,24 @@ h2{
 
 @media screen and (max-width:768px){
 .text{    
-    display: inline-block;
-    width: 50%;
-    height: 30%;
+    width: 70%;
     font-family: "Open Sans", sans-serif;
     font-weight: 300;
-    font-size: 1em;
+    font-size: 0.5em;
     color: white;
     text-align: center;
     justify-content: center;
 }
+}
+
+#third_page{
+    background-color: rgb(220, 182, 182);
+}
+
+#fourth_page{
+    background-color: crimson;
+}
+
+#fifth_page{
+    background-color: rgb(220, 182, 182);
 }
