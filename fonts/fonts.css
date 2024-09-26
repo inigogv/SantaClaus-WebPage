@@ -27,3 +27,8 @@
     src: url("Open_Sans/OpenSans-Regular.ttf") format("truetype");
     font-weight: 400;
 }
+@font-face {
+    font-family: "Open Sans";
+    src: url("Open_Sans/static/OpenSans-Bold.ttf") format("truetype");
+    font-weight: 700;
+}
