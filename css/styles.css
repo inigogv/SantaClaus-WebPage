@@ -71,6 +71,7 @@ h1{
     font-weight: 900;
     color: white;
     font-size: 4em;
+    text-shadow: 2px 2px 4px crimson;
     margin: auto;
     padding-top: 300px;
 }
@@ -105,7 +106,7 @@ h2{
     font-size: 3em;
     color: whitesmoke;
     text-align: center;
-    margin-top: 0;
+    margin: 0;
     padding-top: 60px;
 }
 
@@ -148,6 +149,36 @@ h2{
 
 #third_page{
     background-color: rgb(220, 182, 182);
+}
+
+.boxes_section{
+    display: inline-block;
+    text-align: center;
+    justify-content: center;
+
+}
+
+.boxes{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+}
+
+.box{
+    width: 20%;
+    height: 30%;
+    margin: 50px;
+    padding: 40px;
+    background-color: rgb(58, 91, 58);
+    border-radius: 10px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    color: white;
+
 }
 
 #fourth_page{
