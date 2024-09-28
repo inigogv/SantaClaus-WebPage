@@ -179,7 +179,7 @@ h2{
     /*height: 10%;*/
     display: flex;
     margin: 40px;
-    padding: 35px;
+    padding: 20px;
     background-color: rgb(58, 91, 58);
     border-radius: 20px;
     font-family: "Open Sans", sans-serif;
@@ -188,15 +188,18 @@ h2{
 
 }
 
-.foto_carta1{
-    width: 40%;
-    border-radius: 40px;
+.datos{
+    width: 45%
 }
 
+.redaccion{
+    width: 55%;
+    overflow: auto;
+}
 .carta{
     font-family: "Open Sans", sans-serif;
     font-weight: 300;
-    margin: 10px;
+    margin: 0;
 }
 
 .foto_carta{
