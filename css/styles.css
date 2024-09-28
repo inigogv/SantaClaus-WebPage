@@ -152,9 +152,9 @@ h2{
 }
 
 .boxes_section{
-    display: inline-block;
-    text-align: center;
+    display: flex;
     justify-content: center;
+    align-items: center;
 
 }
 
@@ -169,12 +169,12 @@ h2{
 }
 
 .box{
-    width: 20%;
-    height: 30%;
+    width: 15%;
+    height: 40%;
     margin: 50px;
     padding: 40px;
     background-color: rgb(58, 91, 58);
-    border-radius: 10px;
+    border-radius: 20px;
     font-family: "Open Sans", sans-serif;
     font-weight: 400;
     color: white;
