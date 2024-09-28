@@ -175,8 +175,9 @@ h2{
 }
 
 .box{
-    width: 15%;
+    width: 20%;
     /*height: 10%;*/
+    display: flex;
     margin: 40px;
     padding: 35px;
     background-color: rgb(58, 91, 58);
@@ -192,28 +193,14 @@ h2{
     border-radius: 40px;
 }
 
-.foto_carta2{
-    width: 40%;
-    border-radius: 40px;
+.carta{
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+    margin: 10px;
 }
 
-.foto_carta3{
-    width: 40%;
-    border-radius: 40px;
-}
-
-.foto_carta4{
-    width: 40%;
-    border-radius: 40px;
-}
-
-.foto_carta5{
-    width: 40%;
-    border-radius: 40px;
-}
-
-.foto_carta6{
-    width: 40%;
+.foto_carta{
+    width: 80%;
     border-radius: 40px;
 }
 
