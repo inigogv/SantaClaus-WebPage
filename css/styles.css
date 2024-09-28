@@ -162,7 +162,6 @@ h2{
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .boxes{
@@ -178,8 +177,8 @@ h2{
 .box{
     width: 15%;
     /*height: 10%;*/
-    margin: 50px;
-    padding: 40px;
+    margin: 40px;
+    padding: 35px;
     background-color: rgb(58, 91, 58);
     border-radius: 20px;
     font-family: "Open Sans", sans-serif;
@@ -230,4 +229,16 @@ h2{
     height: 100vh;
     background-size: cover;
     background-position: center;
+}
+
+#juego1{
+    height: 90px;
+}
+
+#juego2{
+    height: 90px;
+}
+
+#juego3{
+    height: 90px;
 }
