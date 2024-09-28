@@ -45,7 +45,7 @@
                 <img class= "img2" src="img/img2.jpg" alt="Papá Noel">
                 <div class= "text"> 
                     <p> Te damos la bienvenida al Mundo de Papá Noel. </p>
-                    <p> Un lugasr mágico en el que podrás disfrutar de la Navidad durante todo el año. </p>
+                    <p> Un lugar mágico en el que podrás disfrutar de la Navidad durante todo el año. </p>
                     <p> Aquí podrás podrás leer las cartas que le han mandado niños de cualquier lugar del mundo. También podrás mandar tu propia carta para que Papá Noel la lea y te traiga los regalos que deseas y, por último, podrás jugar a los mejores juegos navideños de Santa. </p>
                 </div>
             </div>
@@ -124,12 +124,40 @@
         
         <section id="fourth_page">
             <div>
-                <h2>Titulo</h2>
+                <h2>Envía tu carta</h2>
             </div>
             <form action="" class="formulario">
-                <input class="formulario_input" type="text" placeholder="email">
-                <input class="formulario_input" type="text" placeholder="contraseña">
-                <input class="formulario_input formulario_submit" type="submit">
+                <div class="nom_email">
+                    <div class="caja_label">
+                        <label for="nombre">Nombre</label> 
+                        <input class="formulario_input" type="text" placeholder="Nombre">
+                    </div>
+                    <div class="caja_label">
+                        <label for="email">Email</label>
+                        <input class="formulario_input" type="text" placeholder="Email">
+                    </div>
+                </div> 
+                <div class="lugar">
+                    <div class="caja_label">
+                        <label for="ciudad">Ciudad</label>
+                        <input class="formulario_input" type="text" placeholder="Ciudad">
+                    </div>
+                    <div class="caja_label">
+                        <label for="pais">País</label>
+                        <input class="formulario_input" type="text" placeholder="País">
+                    </div>
+                </div> 
+                <div class="mi_carta"> 
+                    <div class="caja_label">
+                        <label for="carta">Carta para Papá Noél</label>
+                        <input class="formulario_carta" placeholder="Escribe tu carta">
+                    </div>
+                </div> 
+                <div class="boton_enviar">
+                    <button class="formulario_submit">
+                        Envía
+                    </button>
+                </div>
             </form>
         </section>
 
@@ -137,15 +165,23 @@
             <div>
                 <h2>¡Juega!</h2>
             </div>
-            <div>
-                <ol class= "juegos_section">
-                    <li> <a class= "juegos" href= #juego1">Juego Super Santa Run </a> </li>
-                    <li> <a class= "juegos" href= #juego2">Juego Santa Haircut</a> </li>
-                    <li> <a class= "juegos" href= #juego3">Juego Santa Chimney Challenge</a> </li>
-                </ol>
-                <img id= "juego1" src="img/juego1.jpg" alt="Juego Super Santa Run">      
-                <img id= "juego2" src="img/juego2.jpg" alt="Juego Santa Haircut">          
-                <img id= "juego3" src="img/juego3.jpg" alt="Juego Santa Chimney Adventur">              
+            <div class="seccion_juegos">
+                <ul class= "juegos_list">
+                    <li> <a class= "juegos" href= #juego1>Juego Super Santa Run </a> </li>
+                    <li> <a class= "juegos" href= #juego2>Juego Santa Haircut</a> </li>
+                    <li> <a class= "juegos" href= #juego3>Juego Santa Chimney Challenge</a> </li>
+                </ul>
+            </div>
+            <div class="juegos_img">
+                <div class="juego" id= "juego1">
+                    <img class="img_juego" src="img/juego1.jpg" alt="Juego Super Santa Run">
+                </div>
+                <div class="juego" id= "juego2">
+                    <img class="img_juego" src="img/juego2.jpg" alt="Juego Santa Haircut">    
+                </div> 
+                <div class="juego" id= "juego3">
+                    <img class="img_juego" src="img/juego3.jpg" alt="Juego Santa Chimney Adventure">       
+                </div>            
             </div>
            
         

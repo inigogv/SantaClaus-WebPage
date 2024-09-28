@@ -211,6 +211,64 @@ h2{
     background-position: center;
 }
 
+label{
+    display: block;
+    margin-bottom: 5px;
+}
+
+.caja_label{
+    width: 100%;
+    padding: 30px;
+}
+.formulario{
+    padding: 20px;
+}
+
+.formulario_input{
+    padding: 10px;
+    width: 100%;
+}
+.nom_email{
+    display:flex;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.lugar{
+    display:flex;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.formulario_carta{
+    display: flex;
+    justify-content: center;
+    padding: 30px 0;
+    width: 90%;
+}
+
+.mi_carta{
+    display:flex;
+    padding: 10px;
+    justify-content: center;
+    margin: 0;
+}
+
+.formulario_submit{
+    padding: 10px;
+    width: 100px;
+    background-color: darkgreen;
+    color: white;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.boton_enviar{
+    display: flex;
+    justify-content: center;
+}
+
 #fifth_page{
     background-color: rgb(220, 182, 182);
     height: 100vh;
@@ -218,7 +276,47 @@ h2{
     background-position: center;
 }
 
-#juego1{
+.seccion_juegos{
+    padding: 20px;
+    width: 30%;
+}
+.juegos_list{
+    list-style: none;
+}
+
+.juegos{
+    display: block;
+    align-items: center;
+    padding: 20px;
+    margin: 0;
+    text-decoration: none;
+}
+
+.juegos_image{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.juego{
+    position: absolute;
+    display: none;
+    height: 90px;
+}
+
+.img_juego{
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+.juego:target{
+    display: block;
+}
+
+/*#juego1{
     height: 90px;
 }
 
@@ -228,4 +326,4 @@ h2{
 
 #juego3{
     height: 90px;
-}
+}*/
