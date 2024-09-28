@@ -118,37 +118,66 @@ h2{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 60px;
+    margin: 0;
 }
 
 .img2{
-    width: 35%;
+    width: 50%;
     height: 80%;
-    padding-left: 20px;
+    padding-left: 50px;
+}
+
+@media screen and (max-width:1000px){
+    .img2{
+        width: 50%;
+        height: 60%;
+        padding-left: 50px;
+    }
+}
+
+@media screen and (max-width:768px){
+    .img2{
+        height: 50%;
+    }
+}
+
+@media screen and (max-width:600px){
+    .img2{
+        height: 40%;
+    }
 }
 
 .text{    
-    width: 40%;
+    width: 50%;
     font-family: "Open Sans", sans-serif;
     font-weight: 300;
     font-size: 1.3em;
     color: white;
     text-align: center;
     justify-content: center;
-    padding-left: 180px;
-    padding-right: 30px;
+    padding-left: 150px;
+    padding-right: 50px;
+}
+
+@media screen and (max-width:1000px){
+    .text{    
+        width: 70%;
+        font-size: 1.1em;
+        padding-left: 50px;
+    }
 }
 
 @media screen and (max-width:768px){
-.text{    
-    width: 70%;
-    font-family: "Open Sans", sans-serif;
-    font-weight: 300;
-    font-size: 0.5em;
-    color: white;
-    text-align: center;
-    justify-content: center;
+    .text{    
+        font-size: 0.9em;
+    }
 }
+
+@media screen and (max-width:600px){
+    .text{
+        font-size: 0.7em;
+        padding-left: 30px;
+    }
 }
 
 #third_page{
@@ -187,6 +216,30 @@ h2{
     color: white;
 
 }
+
+@media screen and (max-width:1000px){
+    .box{    
+        width: 30%;
+        margin: 20px;
+        padding: 10px;
+        font-size: 0.8em;
+    }
+}
+
+@media screen and (max-width:768px){
+    .box{    
+        font-size: 0.7em;
+    }
+}
+
+@media screen and (max-width:600px){
+    .box{    
+        width: 40%;
+        margin: 15px;
+        font-size: 0.6em;
+    }
+}
+
 
 .datos{
     width: 45%
