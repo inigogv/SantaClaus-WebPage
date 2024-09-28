@@ -240,18 +240,14 @@ label{
     margin: 0;
 }
 
-.formulario_carta{
-    display: flex;
-    justify-content: center;
-    padding: 30px 0;
-    width: 90%;
-}
-
 .mi_carta{
     display:flex;
-    padding: 10px;
-    justify-content: center;
     margin: 0;
+}
+
+.formulario_carta{
+    display: flex;
+    padding: 30px 10px;
 }
 
 .formulario_submit{
