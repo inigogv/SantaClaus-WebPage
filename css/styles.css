@@ -167,17 +167,17 @@ h2{
 
 .boxes{
     display: flex;
-    text-align: center;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .box{
     width: 15%;
-    height: 40%;
+    /*height: 10%;*/
     margin: 50px;
     padding: 40px;
     background-color: rgb(58, 91, 58);
@@ -186,6 +186,36 @@ h2{
     font-weight: 400;
     color: white;
 
+}
+
+.foto_carta1{
+    width: 40%;
+    border-radius: 40px;
+}
+
+.foto_carta2{
+    width: 40%;
+    border-radius: 40px;
+}
+
+.foto_carta3{
+    width: 40%;
+    border-radius: 40px;
+}
+
+.foto_carta4{
+    width: 40%;
+    border-radius: 40px;
+}
+
+.foto_carta5{
+    width: 40%;
+    border-radius: 40px;
+}
+
+.foto_carta6{
+    width: 40%;
+    border-radius: 40px;
 }
 
 #fourth_page{
