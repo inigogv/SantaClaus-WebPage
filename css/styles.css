@@ -35,6 +35,14 @@ body{
     color: darkgreen;
 }
 
+.enlace:active{
+    color: darkgreen;
+}
+
+.enlace:target{
+    color: darkgreen;
+}
+
 .botones{
     padding-right: 20px;
 }
@@ -98,7 +106,7 @@ h1{
 
 #second_page{
     background-color: crimson;
-    height: 100vh;
+    min-height: 100vh;
     background-size: cover;
     background-position: center;
 }
@@ -214,7 +222,7 @@ h2{
 .box{
     width: 25%;
     display: flex;
-    margin: 30px;
+    margin: 25px;
     padding: 20px;
     background-color: rgb(58, 91, 58);
     border-radius: 20px;
@@ -478,8 +486,24 @@ label{
 }
 
 .redes_sociales{
-    padding: 15px 20px 0 20px; 
-    width: 200px;
+    text-align: center;
+    padding: 15px 50px 0 50px; 
+    width: 25%;
+}
+
+.contacto{
+    padding: 0 100px 0 50px;
+    text-align: center;
+    width: 25%;
+}
+
+.informacion{
+    text-align: center;
+    padding: 0 10px 0 100px;
+}
+.informacion a{
+    text-decoration: none;
+    color: black;
 }
 
 .icono{
