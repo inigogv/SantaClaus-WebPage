@@ -453,7 +453,7 @@ label{
 } 
 
 .seccion_juegos{
-    display: flex;
+    display: block;
     padding: 15px 40px;
     align-content: center;
     align-items: center;
@@ -464,6 +464,10 @@ label{
         padding: 10% 20%;
         display: block;
     }
+}
+
+.subseccion_juegos{
+    display: flex;
 }
 
 .parte_lista{
