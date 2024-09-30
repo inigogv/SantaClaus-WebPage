@@ -199,7 +199,7 @@ h1{
     align-items: center;
     text-align: center;
     margin: 0;
-    padding: 10px 20px 0 20px;
+    padding: 10px 40px 0 10px;
 }
 
 @media screen and (max-width:768px){
@@ -220,13 +220,13 @@ h1{
 
 @media screen and (max-width:768px){
     .img2{
-        width: 55%;
+        width: 70%;
     }
 }
 
 @media screen and (max-width:600px){
     .img2{
-        width:50%;
+        width:60%;
     }
 }
 
@@ -261,15 +261,15 @@ h1{
 
 @media screen and (max-width:768px){
     .text{    
-        width: 80%;
-        font-size: 0.7em;
+        width: 70%;
+        font-size: 0.9em;
     }
 }
 
 @media screen and (max-width:600px){
     .text{
         width: 60%;
-        font-size: 0.7em;
+        font-size: 0.8em;
     }
 }
 
