@@ -9,7 +9,7 @@ body{
     background-color: rgba(255, 255, 255, 0.585);
     position: fixed;
     width: 100%;
-    padding-left: 10px 20px; /*raro*/
+    padding-left: 10px;
     align-items: center;
     justify-content: space-between;
 }
@@ -104,14 +104,12 @@ h1{
     cursor: pointer;
 }
 
-#second_page{
-    background-color: crimson;
+.pages{
+    background-color: rgb(220, 182, 182);
     min-height: 100vh;
-    background-size: cover;
-    background-position: center;
 }
 
-h2{
+.section_title{
     font-family: "Merriweather", sans-serif;
     font-weight: 700;
     font-size: 3em;
@@ -196,12 +194,12 @@ h2{
     }
 }
 
+/*
 #third_page{
     background-color: rgb(220, 182, 182);
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
+    min-height: 100vh;
 }
+*/
 
 .boxes_section{
     display: flex;
@@ -275,12 +273,14 @@ h2{
     border-radius: 40px;
 }
 
+/*
 #fourth_page{
     background-color: crimson;
     height: 100vh;
     background-size: cover;
     background-position: center;
 }
+*/
 
 .pagina_formulario{
     display: flex;
@@ -363,12 +363,14 @@ label{
     cursor: pointer;
 }
 
+/*
 #fifth_page{
     background-color: rgb(220, 182, 182);
     height: 100vh;
     background-size: cover;
     background-position: center;
 }
+*/
 
 .seccion_juegos{
     display: flex;
@@ -488,7 +490,7 @@ label{
 .redes_sociales{
     text-align: center;
     padding: 15px 50px 0 50px; 
-    width: 25%;
+    width: 400px;
 }
 
 .contacto{
