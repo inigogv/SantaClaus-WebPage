@@ -6,7 +6,7 @@ body{
 
 .barra_navegacion{
     display: flex;
-    background-color: rgba(255, 255, 255, 0.585);
+    background-color: #ffffff95;
     position: fixed;
     width: 100%;
     padding-left: 10px;
@@ -22,44 +22,63 @@ body{
 
 .iconos_nav{
     font-family: "Open Sans", sans-serif;
+    font-weight: 300;
     display: flex;
+}
+
+@media screen and (max-width:768px){
+    .iconos_nav{    
+        font-size: 0.9em;
+    }
+}
+
+@media screen and (max-width:600px){
+    .iconos_nav{
+        font-size: 0.7em;
+    }
 }
 
 .enlace{
     margin: 0 10px;
     text-decoration: none;
-    color: black;
+    color: #000000;
 }
 
 .enlace:hover{
-    color: darkgreen;
+    color: #074207;
 }
 
 .enlace:active{
-    color: darkgreen;
+    color: #074207;
 }
 
 .enlace:target{
-    color: darkgreen;
+    color: #074207;
 }
 
 .botones{
     padding-right: 20px;
 }
-.inicio_sesion{
-    color: white;
-    background-color: darkgreen;
+
+@media screen and (max-width:600px){
+    .botones{
+        padding-left: 20px;
+    }
+}
+
+.registrarse {
+    color: #ffffff;
+    background-color: #074207;
     font-family:"Open Sans", sans-serif;
     font-weight: 400;
     cursor: pointer;
 }
 
-.registro {
-    color: white;
-    background-color: darkgreen;
-    font-family:"Open Sans", sans-serif;
-    font-weight: 400;
-    cursor: pointer;
+@media screen and (max-width:600px){
+    .registrarse{
+        font-size: 0.6em;
+        display: flex;
+    }
 }
 
 #home{
@@ -77,22 +96,50 @@ body{
 h1{
     font-family: "Merriweather", sans-serif;
     font-weight: 900;
-    color: white;
+    color: #ffffff;
     font-size: 4em;
-    text-shadow: 2px 2px 4px crimson;
+    text-shadow: 2px 2px 4px #b54c4c;
     margin: 0;
     /*padding-top: 300px;*/
+}
+
+@media screen and (max-width:768px){
+    h1{    
+        font-size: 3em;
+    }
+}
+
+@media screen and (max-width:600px){
+    h1{
+        font-size: 2em;
+    }
 }
 
 .counter{
     font-family: "Open Sans", sans-serif;
     font-weight: 700;
-    color: rgba(203, 199, 199, 0.748);
+    color: #cbc7c7bf;
     font-size: 2em;
+    background-color: #b54c4ca8;
+    border-radius: 10px;
+    width: fit-content;
+    margin: auto;
 }
 
-.boton{
-    background-color: darkgreen;
+@media screen and (max-width:768px){
+    .counter{    
+        font-size: 1.5em;
+    }
+}
+
+@media screen and (max-width:600px){
+    .counter{
+        font-size: 1.2em;
+    }
+}
+
+.boton_empezar{
+    background-color: #074207;
     color: white;
     font-family:"Open Sans", sans-serif;
     font-weight: 400;
@@ -104,10 +151,24 @@ h1{
     cursor: pointer;
 }
 
+@media screen and (max-width:768px){
+    .boton_empezar{    
+        font-size: 1.3em;
+    }
+}
+
+@media screen and (max-width:600px){
+    .boton_empezar{
+        font-size: 1em;
+    }
+}
+
 .pages{
-    background-color: rgb(220, 182, 182);
+    background-color: rgb(181, 76, 76);
     min-height: 100vh;
 }
+
+/* second_page */
 
 .section_title{
     font-family: "Merriweather", sans-serif;
@@ -120,7 +181,7 @@ h1{
 }
 
 .img_texto{
-    height: 70%;
+    height: calc(100vh - 120px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -194,14 +255,10 @@ h1{
     }
 }
 
-/*
-#third_page{
-    background-color: rgb(220, 182, 182);
-    min-height: 100vh;
-}
-*/
+/* third_page */
 
 .boxes_section{
+    height: calc(100vh - 120px);
     display: flex;
     justify-content: center;
     align-items: center;
