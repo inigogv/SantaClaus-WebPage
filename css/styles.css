@@ -197,8 +197,9 @@ h1{
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     margin: 0;
-    padding-top: 20px;
+    padding: 20px 20px 0 20px;
 }
 
 @media screen and (max-width:768px){
@@ -208,61 +209,53 @@ h1{
 }
 
 .img2{
-    width: 100%;
-    padding-left: 50px;
-}
-
-@media screen and (max-width:1000px){
-    .img2{
-        width: 90%;
-    }
+    width: 90%;
 }
 
 @media screen and (max-width:768px){
     .img2{
-        width: 85%;
+        width: 70%;
     }
 }
 
 @media screen and (max-width:600px){
     .img2{
-        width:80%;
+        width:90%;
     }
 }
 
 .text{    
-    width: fit-content;
+    width: 30%;
     font-family: "Open Sans", sans-serif;
     font-weight: 300;
     font-size: 1.3em;
     color: #fff5e1;
     text-align: center;
     justify-content: center;
-    padding-left: 150px;
+    padding-left: 50px;
     padding-right: 50px;
     background-color: #9d3838;
+    margin: auto;
    
 }
 
-@media screen and (max-width:1000px){
+@media screen and (max-width:1200px){
     .text{    
-        width: 70%;
-        font-size: 1.1em;
-        padding-left: 50px;
+        width: 60%;
+        font-size: 1em;
     }
 }
 
 @media screen and (max-width:768px){
     .text{    
+        width: 70%;
         font-size: 0.9em;
-        margin: auto;
     }
 }
 
 @media screen and (max-width:600px){
     .text{
-        font-size: 0.7em;
-        padding-top: 30px;
+        font-size: 0.8em;
     }
 }
 
@@ -507,7 +500,7 @@ label{
 .juegos_img{
     width: 60%;
     height: 50vh;
-    background-color: #e6e6fa;
+    background-color: #9d3838;
     border-radius: 70px;
 }
 
@@ -521,7 +514,7 @@ label{
     padding: 20px;
     margin: 0;
     text-decoration: none;
-    color: black;
+    color: #000000;
 }
 
 @media screen and (max-width:768px){
@@ -595,7 +588,6 @@ label{
     background-color: rgba(99, 91, 91, 0.498);
     display: flex;
     width: 100%;
-    padding-left: 10px;
 }
 
 .redes_sociales{
