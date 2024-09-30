@@ -299,10 +299,9 @@ h1{
 }
 
 .box{
-    width: 20%;
-    max-height: 25%;
+    width: 22%;
     display: flex;
-    margin: 25px;
+    margin: 20px;
     padding: 20px;
     background-color: #074207;
     border-radius: 20px;
