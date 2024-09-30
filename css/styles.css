@@ -445,6 +445,10 @@ label{
     width: 100%;
 } 
 
+.frase p{
+    margin: 10px;
+}
+
 .seccion_juegos{
     display: block;
     padding: 15px 40px;
@@ -461,6 +465,7 @@ label{
 
 .subseccion_juegos{
     display: flex;
+    align-items: center;
 }
 
 .parte_lista{
@@ -499,7 +504,7 @@ label{
 
 .juegos_img{
     width: 60%;
-    height: 50vh;
+    height: 60vh;
     background-color: #9d3838;
     border-radius: 70px;
 }
@@ -514,7 +519,7 @@ label{
     padding: 20px;
     margin: 0;
     text-decoration: none;
-    color: #000000;
+    color: black;
 }
 
 @media screen and (max-width:768px){
@@ -531,20 +536,18 @@ label{
 
 .juego{
     display: none;
-    height: fit-content;
+    width: 100%;
+    height: 60vh;
+    justify-content: center;
+    align-items: center;
 }
 
 .img_juego{
-    width: 60%;
-    height: 30%;
-    padding-left: 20px;
+    width: 70%;
+    height: 40vh;
+    padding: 20px;
     border-radius: 70px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     margin: auto;
-    margin-top: 26px;
-    margin-bottom: 26px;
 }
 
 @media screen and (max-width:1200px){
@@ -567,8 +570,9 @@ label{
 }
 
 .juego:target{
-    display: block;
+    display: flex;
 }
+
 
 /*
 #juego1{
