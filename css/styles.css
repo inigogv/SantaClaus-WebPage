@@ -480,6 +480,7 @@ label{
 .subseccion_juegos{
     display: flex;
     align-items: center;
+    justify-content: space-evenly;
 }
 
 .parte_lista{
@@ -587,10 +588,8 @@ label{
     display: flex;
 }
 
-
 /*
 #juego1{
-    
 }
 
 #juego2{
@@ -602,27 +601,29 @@ label{
 }
 */
 
+/*footer*/
+
 .pie_de_pag{
     background-color: rgba(99, 91, 91, 0.498);
     display: flex;
+    justify-content: space-evenly;
     width: 100%;
+    height: 20vh;
 }
 
 .redes_sociales{
     text-align: center;
-    padding: 15px 50px 0 50px; 
+    padding-top: 15px;
     width: 400px;
 }
 
 .contacto{
-    padding: 0 100px 0 50px;
     text-align: center;
     width: 25%;
 }
 
 .informacion{
     text-align: center;
-    padding: 0 10px 0 100px;
 }
 .informacion a{
     text-decoration: none;
