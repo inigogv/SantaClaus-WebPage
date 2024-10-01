@@ -495,8 +495,6 @@ label{
     border-right-color: #808080;
     border-bottom-color: #808080;
     border-width: 2px;
-    opacity: 1;
-    color: #000000;
 }
 
 @media screen and (max-width:768px){
