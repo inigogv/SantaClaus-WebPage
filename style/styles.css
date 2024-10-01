@@ -268,7 +268,7 @@ h1{
     .texto_mundo_santa{    
         width: 80%;
         height: auto;
-        font-size: 0.8em;
+        font-size: 1.3em;
         margin: 10px;
     }
 }
@@ -276,7 +276,7 @@ h1{
 @media screen and (max-width:600px){
     .texto_mundo_santa{
         width: 60%;
-        font-size: 0.7em;
+        font-size: 1.3em;
     }
 }
 
@@ -309,6 +309,14 @@ h1{
     background-color: #9d3838;
 }
 
+@media screen and (max-width:768px){
+    .boxes{    
+        height: 80%;
+        width: 100%;
+    }
+    
+}
+
 .box{
     width: 22%;
     display: flex;
@@ -333,15 +341,18 @@ h1{
 
 @media screen and (max-width:768px){
     .box{    
-        width: 35%;
+        width: 40%;
+        height: 25%;
+        padding: 10px;  
     }
 }
 
 @media screen and (max-width:600px){
     .box{    
-        width: 50%;
+        width: 90%;
         margin: 5px;
-        height: 40px;
+        height: 125px;
+        padding: 0;
     }
 }
 
@@ -351,15 +362,15 @@ h1{
 
 @media screen and (max-width:768px){
     .datos_box{  
-        width: 30%;     
-        font-size: 0.7em;
+        width: 40%;     
+        font-size: 1.4em;
     }
 }
 @media screen and (max-width:600px){
     .datos_box{ 
         display: flex;
         width: 30%;
-        font-size: 0.6em;
+        font-size: 1em;
     }
 }
 
@@ -370,21 +381,23 @@ h1{
 
 @media screen and (max-width:600px){
     .foto_carta{ 
-        width: 70%;
-        height: 70%;
+        width: 50%;
+        height: 50%;
+        padding-right: 10px;
+        margin: 15px;
     }
 }
 
 @media screen and (max-width:600px){
     .datos{
         display: flex;
-        padding-left: 15px;
+        flex-direction: column;
     }
 }
 
 @media screen and (max-width:600px){
     .lugar_residencia{
-        padding-left: 10px;
+        
     }
 }
 
@@ -399,15 +412,16 @@ h1{
 @media screen and (max-width:768px){
     .texto_carta{    
         padding-left: 15px;
-        font-size: 0.9em;
+        font-size: 1.4em;
     }
 }
 
 @media screen and (max-width:600px){
     .texto_carta{   
         width: 70%; 
-        padding-left: 50px;
-        font-size: 0.6em;
+        padding-left: 30px;
+        margin: 5px;
+        font-size: 1.3em;
     }
 }
 
