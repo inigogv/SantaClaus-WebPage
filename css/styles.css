@@ -435,8 +435,20 @@ h1{
     display: flex;
 }
 
+@media screen and (max-width:600px){
+    .nom_email{    
+        flex-direction: column;
+    }
+}
+
 .lugar{
     display: flex;
+}
+
+@media screen and (max-width:600px){
+    .lugar{    
+        flex-direction: column;
+    }
 }
 
 label{
@@ -473,7 +485,8 @@ label{
 
 @media screen and (max-width:600px){
     .caja_label{    
-        padding: 30px 30px 10px 10px;
+        width: 80%;
+        padding: 10px 30px 10px 10px;
     }
 }
 
@@ -493,6 +506,7 @@ label{
 
 @media screen and (max-width:600px){
     .formulario_input{    
+        padding: 5px;
         font-size: 0.7em;
     }
 }
@@ -524,6 +538,7 @@ label{
 @media screen and (max-width:600px){
     .formulario_input_mi_carta{    
         font-size: 0.7em;
+        padding: 5px;
     }
 }
 
