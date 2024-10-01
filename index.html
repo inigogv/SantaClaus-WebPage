@@ -13,13 +13,13 @@
         <div> 
             <img class= "logo" src="img/logo.png" alt="logo"> 
         </div>
-        <div class= "iconos_nav">
+        <nav class= "iconos_nav">
             <a class= "enlace_barra_nav" href="#home">Home</a>
             <a class= "enlace_barra_nav" href="#second_page">Papá Noel</a>
             <a class= "enlace_barra_nav" href="#third_page">Cartas</a> 
             <a class= "enlace_barra_nav" href="#fourth_page">Envía tú carta</a>
             <a class= "enlace_barra_nav" href="#fifth_page">¡Juega!</a>
-        </div>
+        </nav>
         
         <div class="botones_barra_nav">
             <button class="cuenta">
@@ -44,7 +44,7 @@
                 <h2 class= "title_section">Papá Noel</h2>
             </div>
             <div class= "img_texto_section">
-                <div>
+                <div class= "img_renos_container">
                     <img class="img_renos" src="img/img_renos.jpg" alt="Papá Noel en trineo">
                 </div>
                 <div class= "texto_mundo_santa"> 
@@ -65,8 +65,10 @@
                     <li class="box"> 
                         <div class="datos_box">
                             <img class="foto_carta" src="img/niña1.png" alt="Foto Olga García">
-                            <p> Olga García </p>
-                            <p> Madrid, España </p>
+                            <div class= "datos">
+                                <p> Olga García </p>
+                                <p class="lugar_residencia"> Madrid, España </p>
+                            </div>
                         </div>
                         <div class= "texto_carta">
                             <p> Querido Papá Noel, este año he sido muy buena. Me gustaría que me trajeras una muñeca y un libro. Muchas gracias, Olga. </p>    
@@ -75,8 +77,10 @@
                     <li class="box"> 
                         <div class="datos_box">
                             <img class="foto_carta" src="img/niño1.png" alt="Foto Luca Rossi">
-                            <p> Luca Rossi </p>
-                            <p> Venecia, Italia </p>
+                            <div class= "datos">
+                                <p> Luca Rossi </p>
+                                <p class="lugar_residencia"> Venecia, Italia </p>
+                            </div>
                         </div> 
                         <div class= "texto_carta">
                             <p> Caro Babbo Natale, quest'anno ho aiutato molto in casa. Vorrei che mi portassi un pallone e una macchina da corsa. Grazie mille, Luca. </p>
@@ -85,8 +89,10 @@
                     <li class="box"> 
                         <div class="datos_box">
                             <img class="foto_carta" src="img/niño2.png" alt="Foto Valerik Nóvikov">
-                            <p> Valerik Nóvikov </p>
-                            <p> Moscú, Rusia </p>
+                            <div class= "datos">
+                                <p> Valerik Nóvikov </p>
+                                <p class="lugar_residencia"> Moscú, Rusia </p>
+                            </div>
                         </div>
                         <div class= "texto_carta">
                             <p> Дорогой Дедушка Мороз, я бы хотел, чтобы ты принес мне гоночную машину и книгу. Спасибо Валерик. </p>
@@ -95,8 +101,10 @@
                     <li class="box"> 
                         <div class="datos_box">
                             <img class="foto_carta" src="img/niña2.png" alt="Foto Liv Smith">
-                            <p> Liv Smith </p>
-                            <p> Cork, Irlanda </p>
+                            <div class= "datos">
+                                <p> Liv Smith </p>
+                                <p class="lugar_residencia"> Cork, Irlanda </p>
+                            </div>
                         </div>
                         <div class= "texto_carta">
                             <p> Dear Santa Claus, this year I have helped my parents a lot. I would like you to bring me a doll and a teddy bear. Thank you very much, Liv. </p>
@@ -105,8 +113,10 @@
                     <li class="box"> 
                         <div class="datos_box">
                             <img class="foto_carta" src="img/niña3.png" alt="Foto Alba López">
-                            <p> Alba López</p>
-                            <p> León, España </p>
+                            <div class= "datos">
+                                <p> Alba López</p>
+                                <p class="lugar_residencia"> León, España </p>
+                            </div>
                         </div>
                         <div class= "texto_carta">
                             <p> Querido Papá Noel, este año me he portado muy bien. Me gustaría que me trajeras una muñeca y unos patines. Muchas gracias, Alba. </p>
@@ -115,8 +125,10 @@
                     <li class="box"> 
                         <div class="datos_box">
                             <img class="foto_carta" src="img/niño3.png" alt="Foto Lucas Costa">
-                            <p> Lucas Costa</p>
-                            <p> São Paulo, Brasil </p>
+                            <div class= "datos">
+                                <p> Lucas Costa</p>
+                                <p class="lugar_residencia"> São Paulo, Brasil </p>
+                            </div>
                         </div>
                         <div class= "texto_carta">
                             <p> Querido Papai Noel, este ano fui muito bom. Gostaria que você me trouxesse um carrinho e uma bola. Muito obrigado, Lucas. </p>
@@ -136,27 +148,27 @@
                         <div class="nom_email">
                             <div class="caja_label">
                                 <label for="nombre">Nombre</label> 
-                                <input class="formulario_input" type="text" placeholder="Nombre">
+                                <input class="formulario_input" id="nombre" type="text" required minlength="3" placeholder="Nombre">
                             </div>
                             <div class="caja_label">
                                 <label for="email">Email</label>
-                                <input class="formulario_input" type="text" placeholder="Email">
+                                <input class="formulario_input" id="email" type="email" required placeholder="Email">
                             </div>
                         </div> 
                         <div class="lugar">
                             <div class="caja_label">
                                 <label for="ciudad">Ciudad</label>
-                                <input class="formulario_input" type="text" placeholder="Ciudad">
+                                <input class="formulario_input" id="ciudad" type="text" required placeholder="Ciudad">
                             </div>
                             <div class="caja_label">
                                 <label for="pais">País</label>
-                                <input class="formulario_input" type="text" placeholder="País">
+                                <input class="formulario_input" id="pais" type="text" required placeholder="País">
                             </div>
                         </div> 
                         <div class="mi_carta"> 
                             <div class="caja_label">
                                 <label for="carta">Carta para Papá Noél</label>
-                                <textarea class="formulario_input_mi_carta" placeholder="Escribe tu carta"></textarea>
+                                <textarea class="formulario_input_mi_carta" id="carta" required placeholder="Escribe tu carta"></textarea>
                             </div>
                         </div> 
                         <div class="boton_enviar">
