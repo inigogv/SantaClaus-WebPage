@@ -10,8 +10,7 @@ const contador = ()=>{
 };
 
 const actualizar_tiempo = ()=>{
-    const fecha_actual = new Date().getTime();
-    const tiempo_restante = nochebuena - fecha_actual;
+    const tiempo_restante = nochebuena - Date.now();
 
     // Si la cuenta regresiva ha terminado, detener el intervalo
     if (tiempo_restante <= 0) {
