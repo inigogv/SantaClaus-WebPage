@@ -1,12 +1,12 @@
 let navidad = null;
 let actualizar_tiempo_restante = null;
 
-const contador = ()=>{
+function contador(){
     navidad = new Date("December 24, 2024 23:59:00").getTime();
     actualizar_tiempo_restante = setInterval(actualizar_tiempo,1000);
 };
 
-const actualizar_tiempo = ()=>{
+function actualizar_tiempo(){
     const tiempo_restante = navidad - Date.now();
 
     if (tiempo_restante == 0) {
