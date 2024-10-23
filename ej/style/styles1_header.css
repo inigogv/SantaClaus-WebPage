@@ -24,7 +24,7 @@
 
 @media screen and (max-width:768px){
     .iconos_nav{    
-        font-size: 0.9em;
+        font-size: 0.8em;
     }
 }
 
@@ -54,7 +54,7 @@
     }
 }
 
-.cuenta {
+.entrar{
     color: #ffffff;
     background-color: #074207;
     font-family:"Open Sans", sans-serif;
@@ -62,9 +62,16 @@
     cursor: pointer;
 }
 
+@media screen and (max-width:768px){
+    .entrar{
+        font-size: 0.6em;
+    }
+}
+
 @media screen and (max-width:600px){
-    .cuenta{
+    .entrar{
         font-size: 0.6em;
         display: flex;
     }
 }
+
