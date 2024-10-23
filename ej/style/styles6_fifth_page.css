@@ -1,0 +1,157 @@
+/* #fifth_page*/
+
+.juegos_section{
+    display: block;
+    padding: 15px 40px;
+    align-content: center;
+    align-items: center;
+}
+
+.frase_juegos_section{
+    display: flex;
+    justify-content: center;
+    font-family: "Merriweather", sans-serif;
+    font-weight: 700;
+    font-size: 2em;
+    color: #daa520;
+    text-shadow: 2px 2px 5px #333333;
+    width: 100%;
+} 
+
+@media screen and (max-width:600px){
+    .frase_juegos_section{
+        font-size: 1.5em;
+    }
+}
+
+@media screen and (max-width:600px){
+    .frase_juegos_section{
+        font-size: 1.3em;
+    }
+}
+
+.letras_frase_juegos_section{
+    margin: 10px;
+}
+
+.subseccion_juegos{
+    height: calc(100vh - 250px);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-top: 20px;
+}
+
+@media screen and (max-width:768px){
+    .subseccion_juegos{
+        display: flex;
+        flex-direction: column;
+        padding-top: 0;
+    }
+}
+
+.lista_juegos{
+    width: 40%;
+    padding: 20px;
+}
+
+@media screen and (max-width:768px){
+    .lista_juegos{
+        width: 100%;
+    }
+}
+
+.juego::marker{
+    color: #daa520;
+    font-size: 1em;
+    font-weight: 900;
+    text-shadow: 2px 2px 5px #333333;
+}
+
+.boton_juego{
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+    background-color: #fff5e1;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+    border-radius: 70px;
+    margin: 10px;
+    width: 90%;
+}
+
+.boton_juego:hover{
+    background-color: #daa520;
+}
+
+@media screen and (max-width:768px){
+    .boton_juego{
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width:600px){
+    .boton_juego{
+        padding: 5px;
+    }
+}
+
+.fondo_juegos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #9d3838;
+    width: 50%;
+    height: 100%;
+    border-radius: 70px;
+}
+
+@media screen and (max-width:1200px){
+    .fondo_juegos{
+        width: 70%;
+        height: 90%;
+    }
+}
+
+@media screen and (max-width:768px){
+    .fondo_juegos{
+        width: 90%;
+        height: 70%;
+    }
+}
+
+@media screen and (max-width:600px){
+    .fondo_juegos{
+        width: 80%;
+        height: 50%;
+    }
+}
+
+#img_juego{
+    width: 75%;
+    height: 40vh;
+    padding: 20px;
+    border-radius: 70px;
+    margin: auto;
+}
+
+@media screen and (max-width:1200px){
+    #img_juego{
+        width: 80%;
+        height: 40vh;
+    }
+}
+
+@media screen and (max-width:768px){
+    #img_juego{
+        padding: 5px;
+        width: 60%;
+        height: 25vh;
+    }
+}
+
+@media screen and (max-width:600px){
+    #img_juego{
+        width: 90%;
+    }
+}

@@ -1,0 +1,121 @@
+/* third_page */
+
+.boxes_section{
+    height: calc(100vh - 115px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boxes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #9d3838;
+}
+
+.box{
+    width: 22%;
+    display: flex;
+    margin: 20px;
+    padding: 20px;
+    background-color: #074207;
+    border-radius: 20px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-size: 0.9em;
+    color: #fff5e1;
+    align-content: stretch;
+}
+
+@media screen and (max-width:1200px){
+    .box{    
+        margin: 15px;
+        padding: 15px;
+        font-size: 0.7em;
+    }
+}
+
+@media screen and (max-width:768px){
+    .box{    
+        width: 35%;
+    }
+}
+
+@media screen and (max-width:600px){
+    .box{    
+        width: 50%;
+        margin: 5px;
+        height: 40px;
+    }
+}
+
+.datos_box{
+    width: 45%
+}
+
+@media screen and (max-width:768px){
+    .datos_box{  
+        width: 30%;     
+        font-size: 0.7em;
+    }
+}
+@media screen and (max-width:600px){
+    .datos_box{ 
+        display: flex;
+        width: 30%;
+        font-size: 0.6em;
+    }
+}
+
+.foto_carta{
+    width: 60%;
+    border-radius: 40px;
+}
+
+@media screen and (max-width:600px){
+    .foto_carta{ 
+        width: 70%;
+        height: 70%;
+    }
+}
+
+@media screen and (max-width:600px){
+    .datos{
+        display: flex;
+        padding-left: 15px;
+    }
+}
+
+@media screen and (max-width:600px){
+    .lugar_residencia{
+        padding-left: 10px;
+    }
+}
+
+.texto_carta{
+    width: 60%;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+    margin: 0;
+    padding-left: 20px;
+}
+
+@media screen and (max-width:768px){
+    .texto_carta{    
+        padding-left: 15px;
+        font-size: 0.9em;
+    }
+}
+
+@media screen and (max-width:600px){
+    .texto_carta{   
+        width: 70%; 
+        padding-left: 50px;
+        font-size: 0.6em;
+    }
+}
