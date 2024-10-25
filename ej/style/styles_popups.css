@@ -1,0 +1,139 @@
+.section_popup{
+    position: fixed;
+    background-color: #fffefee9;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    
+}
+
+@media screen and (max-width:1000px){
+    .section_popup{ 
+        width: 50%;
+    }
+}
+
+@media screen and (max-width:768px){
+    .section_popup{ 
+        width: 60%;
+    }
+}
+
+@media screen and (max-width:600px){
+    .section_popup{    
+        width: 80%;
+    }
+}
+
+.cerrar_popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+
+.formulario_popup{
+    padding: 20px 0 20px 0;
+    width: 95%;
+    
+}
+
+.caja_label_popup{
+    padding: 10px;
+}
+
+.etiqueta_cajas_popup{
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    font-size: 0.8em;
+    color: #000000;
+    display: block;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width:768px){
+    .etiqueta_cajas_popup{ 
+        font-size: 0.7em;
+    }
+}
+
+@media screen and (max-width:600px){
+    .etiqueta_cajas_popup{    
+        font-size: 0.6em;
+        margin-bottom: 5px;
+    }
+}
+
+.caja_escribir{
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    width: 100%;
+    font-size: 0.8em;
+    padding: 5px 5px 5px 5px;
+}
+
+@media screen and (max-width:768px){
+    .caja_escribir{ 
+        font-size: 0.7em;
+    }
+}
+
+@media screen and (max-width:600px){
+    .caja_escribir{    
+        font-size: 0.6em;
+    }
+}
+
+.cajas_contraseñas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cajas_lugar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cajas_genero_hijos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.botones_popup_registro{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px 0 10px 15px;
+}
+
+.botones_registro{
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    font-size: 0.8em;
+    color: #ffffff;
+    background-color: #074207;
+    padding: 5px 10px 5px 10px;
+    cursor: pointer;
+}
+
+@media screen and (max-width:768px){
+    .botones_registro{ 
+        font-size: 0.7em;
+    }
+}
+
+@media screen and (max-width:600px){
+    .botones_registro{    
+        font-size: 0.6em;
+    }
+}

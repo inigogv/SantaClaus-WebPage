@@ -12,6 +12,7 @@
     <link rel= "stylesheet" href="style/styles5_fourth_page.css">
     <link rel= "stylesheet" href="style/styles6_fifth_page.css">
     <link rel= "stylesheet" href="style/styles7_footer.css">
+    <link rel= "stylesheet" href="style/styles_popups.css">
     <link rel="stylesheet" href="fonts/fonts.css">
     <script src="script/contador.js"></script>
 
@@ -30,27 +31,83 @@
         </nav>
         
         <div class="botones_barra_nav">
-            <button class="entrar" id="boton_inicio_sesion">
+            <button class="entrar" id="boton_inicio_sesion" onclick="iniciar_sesion()">
                 Iniciar Sesión
             </button>
-            <button class="entrar" id="boton_registro">
+            <button class="entrar" id="boton_registro" onclick="registro()">
                 Registrarme
             </button>
         </div>
     </header>
     <main>
-        <!--
-        <section>
-            <div class= "popup" id= "registro_popup">
-                <div class= "popup_content">
-                    <span class= "cerrar_popup" id= "cerrar_registro_popup"> &times; </span>
-                    <h3> Registro </h3>
-            </div>
-            <div class= "popup" id= "inicio_popup">
+        <section class= "section_popup">
+            <div class= "class_registro_popup" id= "registro_popup">
+                <span class= "cerrar_popup" id= "cerrar_registro_popup"> &times; </span>
+                <h3 class= "title_section_h3"> Registro </h3>
 
+                <form class= "formulario_popup" id= "formulario_registro">
+                    <div class= "caja_label_popup">
+                        <label class= "etiqueta_cajas_popup" for= "nombre_usuario"> Nombre de usuario </label>
+                        <input class= "caja_escribir" type= "text" id= "nombre_usuario" minlength="3" required placeholder="Nombre usuario">
+                    </div>
+
+                    <div class= "cajas_contraseñas">
+                        <div class= "caja_label_popup">
+                            <label class= "etiqueta_cajas_popup" for="contraseña_usuario"> Contraseña </label>
+                            <input class= "caja_escribir" type= "password" id= "contraseña_usuario" minlength="12" required>
+                            <!--con minimo 2 num un caracte especial una mayuscula y una minuscula-->
+                        </div>
+                        <div class= "caja_label_popup">
+                            <label class= "etiqueta_cajas_popup" for="repetir_contraseña_usuario"> Repetir contraseña </label>
+                            <input class= "caja_escribir" type= "password" id= "repetir_contraseña_usuario" required>
+                        </div>
+                    </div>
+
+                    <div class= "caja_label_popup">
+                        <label class= "etiqueta_cajas_popup" for= "email_usuario"> Email </label>
+                        <input class= "caja_escribir" type= "email" id= "email_usuario" required placeholder="nombre@dominio.ext">
+                        <!--mirar email con lo de doiminio.ext-->
+                    </div>
+                    <div class= "cajas_lugar">
+                        <div class= "caja_label_popup">
+                            <label class= "etiqueta_cajas_popup" for="ciudad_usuario"> Ciudad </label>
+                            <input class= "caja_escribir" type="text" id="ciudad_usuario" minlength="3" required placeholder="Ciudad">
+                        </div>
+                        <div class= "caja_label_popup">
+                            <label class= "etiqueta_cajas_popup" for="pais_usuario"> País </label>
+                            <input class= "caja_escribir" type="text" id="pais_usuario" minlength="3" required placeholder="País">
+                        </div>
+                    </div>
+                    
+                    <div class= "cajas_genero_hijos">
+                        <div class= "caja_label_popup">
+                            <label class= "etiqueta_cajas_popup" for="genero"> Género </label>
+                            <select class= "caja_escribir" id="genero">
+                                <option> Masculino </option>
+                                <option> Femenino </option>
+                                <option> Otro </option>
+                                <option> Prefiero no decirlo </option>
+                            </select>
+                        </div>
+                        <div class= "caja_label_popup">
+                            <label class= "etiqueta_cajas_popup" for="num_hijos"> ¿Cuántos hijos tienes? </label>
+                            <input class= "caja_escribir" type="number" id="num_hijos" min="0" required>
+                            <!--mirar lo que hay que hacer con los hijos-->
+                        </div>
+                    </div>
+                    <div class= "botones_popup_registro">
+                        <button class="botones_registro" type="button" onclick="validar_registro()"> Aceptar </button>
+                        <button class="botones_registro" type="reset" onclick="limpiar_registro()"> Limpiar </button>
+                        <button class="botones_registro" type="button" onclick="cancelar_registro()"> Cancelar </button>
+                    </div>
+                </form>
             </div>
+
+            <div class= "class_inicio_sesion_popup" id= "inicio_popup">
+            </div>
+
         </section>
-        -->
+        
         <section id="home">
             <div>
                 <h1>EL MUNDO DE PAPÁ NOEL</h1>
@@ -164,30 +221,30 @@
             </div>
             <div class="formulario_section"> 
                 <img class= "caramelo_izq"  src="images/caramelo_izq.png" alt="Foto caramelo navidad"> 
-                    <form action="" class="formulario">
+                    <form action="" class="formulario_enviar_carta">
                         <div class="nom_email">
                             <div class="caja_label">
-                                <label for="nombre">Nombre</label> 
+                                <label class="nombre_etiqueta" for="nombre">Nombre</label> 
                                 <input class="formulario_input" id="nombre" type="text" required minlength="3" placeholder="Nombre">
                             </div>
                             <div class="caja_label">
-                                <label for="email">Email</label>
+                                <label class="nombre_etiqueta" for="email">Email</label>
                                 <input class="formulario_input" id="email" type="email" required placeholder="Email">
                             </div>
                         </div> 
                         <div class="lugar">
                             <div class="caja_label">
-                                <label for="ciudad">Ciudad</label>
+                                <label class="nombre_etiqueta" for="ciudad">Ciudad</label>
                                 <input class="formulario_input" id="ciudad" type="text" required placeholder="Ciudad">
                             </div>
                             <div class="caja_label">
-                                <label for="pais">País</label>
+                                <label class="nombre_etiqueta" for="pais">País</label>
                                 <input class="formulario_input" id="pais" type="text" required placeholder="País">
                             </div>
                         </div> 
                         <div class="mi_carta"> 
                             <div class="caja_label">
-                                <label for="carta">Carta para Papá Noél</label>
+                                <label class="nombre_etiqueta" for="carta">Carta para Papá Noél</label>
                                 <textarea class="formulario_input_mi_carta" id="carta" required placeholder="Escribe tu carta"></textarea>
                             </div>
                         </div> 

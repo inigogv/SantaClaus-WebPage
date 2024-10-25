@@ -19,7 +19,6 @@ h1{
     font-size: 4em;
     text-shadow: 2px 2px 4px #b54c4c;
     margin: 0;
-    /*padding-top: 300px;*/
 }
 
 @media screen and (max-width:768px){

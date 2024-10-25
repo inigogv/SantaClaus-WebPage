@@ -29,7 +29,7 @@
 @media screen and (max-width:768px){
     .img_renos_container{
         justify-content: center;
-        height: auto;
+        height: 50%;
         width: 80%;
     }
 }

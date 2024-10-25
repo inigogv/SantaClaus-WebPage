@@ -26,7 +26,29 @@ body{
 }
 
 @media screen and (max-width:600px){
-    .section_title{
+    .title_section{
         font-size: 2em;
+    }
+}
+
+.title_section_h3{
+    font-family: "Merriweather", sans-serif;
+    font-weight: 900;
+    font-size: 2.5em;
+    color: #074207;
+    text-align: center;
+    margin: 0;
+    padding-top: 10px;
+}
+
+@media screen and (max-width:768px){
+    .title_section_h3{    
+        font-size: 2em;
+    }
+}
+
+@media screen and (max-width:600px){
+    .title_section_h3{
+        font-size: 1.5em;
     }
 }
