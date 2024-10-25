@@ -15,8 +15,9 @@
     <link rel= "stylesheet" href="style/styles_popups.css">
     <link rel="stylesheet" href="fonts/fonts.css">
     <script src="script/contador.js"></script>
-
+    <script src="script/registro_popup.js"></script>
 </head>
+
 <body>
     <header class="barra_navegacion"> 
         <div> 
@@ -34,17 +35,15 @@
             <button class="entrar" id="boton_inicio_sesion" onclick="iniciar_sesion()">
                 Iniciar Sesión
             </button>
-            <button class="entrar" id="boton_registro" onclick="registro()">
+            <button class="entrar" id="registro" onclick="registro()">
                 Registrarme
             </button>
         </div>
     </header>
     <main>
-        <section class= "section_popup">
-            <div class= "class_registro_popup" id= "registro_popup">
-                <span class= "cerrar_popup" id= "cerrar_registro_popup"> &times; </span>
+        <section class= "section_registro_popup" id= "registro_popup">
+            <div>
                 <h3 class= "title_section_h3"> Registro </h3>
-
                 <form class= "formulario_popup" id= "formulario_registro">
                     <div class= "caja_label_popup">
                         <label class= "etiqueta_cajas_popup" for= "nombre_usuario"> Nombre de usuario </label>
@@ -102,10 +101,6 @@
                     </div>
                 </form>
             </div>
-
-            <div class= "class_inicio_sesion_popup" id= "inicio_popup">
-            </div>
-
         </section>
         
         <section id="home">
