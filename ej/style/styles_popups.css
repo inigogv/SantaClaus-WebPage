@@ -128,3 +128,23 @@
         font-size: 0.6em;
     }
 }
+
+.error_contraseña{
+    font-family: "Open Sans", sans-serif;
+    font-weight: 100;
+    font-size: 0.8em;
+    color: #ff0000;
+    display: none;
+}
+
+@media screen and (max-width:768px){
+    .error_contraseña{ 
+        font-size: 0.7em;
+    }
+}
+
+@media screen and (max-width:600px){
+    .error_contraseña{    
+        font-size: 0.6em;
+    }
+}
