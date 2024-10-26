@@ -36,25 +36,7 @@
     
 }
 
-.cajas_nom_email{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-.cajas_contraseñas{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-.cajas_lugar{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-.cajas_genero_hijos{
+.cajas_agrupadas{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
