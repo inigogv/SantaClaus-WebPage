@@ -9,22 +9,17 @@ function mostrar_iniciar_juego_click_the_circle() {
     document.getElementById("boton_empezar_juego_click_the_circle").style.display = "block";
     document.getElementById("boton_salir").style.display = "none";
     document.getElementById("mensaje_fin").style.display = "none";
-    
-    document.getElementById("puntos").innerText = "0";
-    document.getElementById("tiempo").innerText = "90";
-
-    puntos = 0;
-    tiempo_restante = 90;
-}
-
-function iniciar_juego_click_the_circle() {
-    document.getElementById("boton_empezar_juego_click_the_circle").style.display = "none";
-    document.getElementById("boton_salir").style.display = "inline";
+    document.getElementById("tablero_juego").style.display = "block";
 
     puntos = 0;
     tiempo_restante = 90;
     document.getElementById("puntos").innerText = puntos;
     document.getElementById("tiempo").innerText = tiempo_restante;
+}
+
+function iniciar_juego_click_the_circle() {
+    document.getElementById("boton_empezar_juego_click_the_circle").style.display = "none";
+    document.getElementById("boton_salir").style.display = "inline";
 
     mover_circulo();
     intervalo_tiempo = setInterval(reducir_tiempo, 1000);
@@ -74,16 +69,12 @@ function salir_del_juego() {
     clearInterval(intervalo_tiempo);
     clearInterval(intervalo_movimiento);
     mostrar_fin_juego();
-
-    document.getElementById("mensaje_fin").style.display = "block";
-    document.getElementById("boton_salir").style.display = "none";
-    document.getElementById("img_juego").style.display = "block";
-    document.getElementById("juego_click_the_circle").style.display = "none";
 }
 
 function mostrar_fin_juego() {
     document.getElementById("mensaje_fin").style.display = "block";
     document.getElementById("boton_salir").style.display = "none";
+    document.getElementById("tablero_juego").style.display = "none";
 }
 
 function reiniciar_juego() {

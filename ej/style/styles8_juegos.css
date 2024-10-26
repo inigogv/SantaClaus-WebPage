@@ -198,16 +198,27 @@
     color: #fff5e1;
 }
 
-#boton_salir{
+#boton_salir {
     font-family: "Open Sans", sans-serif;
-    font-weight: 300;
-    font-size: 0.8em;
-    background-color: #daa520;
+    font-weight: 700;
+    font-size: 1.2;
+    background-color: transparent;
     border: none;
-    padding: 5px 10px;  
-    border-radius: 5px;
+    padding: 5px;
     color: #fff5e1;
     cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    #boton_salir {
+        font-size: 0.9em;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #boton_salir {
+        font-size: 0.8em;
+    }
 }
 
 .datos_juego{
@@ -229,7 +240,7 @@
 
 @media screen and (max-width: 600px) {
     .datos_juego {
-        font-size: 0.8em;
+        font-size: 0.7em;
     }
 }
 
