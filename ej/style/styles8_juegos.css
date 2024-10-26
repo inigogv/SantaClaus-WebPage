@@ -162,10 +162,26 @@
     height: auto;
 }
 
-.tablero_juego {
+.espacio_juego{
+    height: 40vh;
+}
+
+@media screen and (max-width:1200px){
+    .espacio_juego{
+        height: 40vh;
+    }
+}
+
+@media screen and (max-width:768px){
+    .espacio_juego{
+        height: 30vh;
+    }
+}
+
+.tablero_juego_circle {
     position: relative; 
     width: 100%;
-    height: 50vh;
+    height: 30vh;
     background-color: #9d3838;
     border: 1px solid #daa520;
     border-radius: 70px;
@@ -173,24 +189,24 @@
 }
 
 @media screen and (max-width: 768px) {
-    #tablero_juego {
-        height: 25vh;
+    #tablero_juego_circle {
+        height: 17vh;
     }
 }
 
 @media screen and (max-width: 600px) {
-    #tablero_juego {
-        height: 20vh;
+    #tablero_juego_circle {
+        height: 15vh;
     }
 }
 
-#boton_empezar_juego_click_the_circle{
+#boton_empezar_circle{
     font-family: "Open Sans", sans-serif;
     font-weight: 700;
+    font-size: 1.2em;
     display: block;
     margin: auto;
-    padding: 10px 20px;
-    font-size: 18px;
+    padding: 10px 20px 10px 20px;
     cursor: pointer;
     background-color: #daa520;
     border: none;
@@ -198,7 +214,19 @@
     color: #fff5e1;
 }
 
-#boton_salir {
+@media screen and (max-width: 768px) {
+    #boton_empezar_circle {
+        font-size: 0.7em;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #boton_empezar_circle {
+        font-size: 0.5em;
+    }
+}
+
+#boton_salir_circle {
     font-family: "Open Sans", sans-serif;
     font-weight: 700;
     font-size: 1.2;
@@ -210,60 +238,107 @@
 }
 
 @media screen and (max-width: 768px) {
-    #boton_salir {
+    #boton_salir_circle {
         font-size: 0.9em;
     }
 }
 
 @media screen and (max-width: 600px) {
-    #boton_salir {
+    #boton_salir_circle {
         font-size: 0.8em;
     }
 }
 
-.datos_juego{
+.datos_juego_circle{
     font-family: "Open Sans", sans-serif;
     font-weight: 700;
     width: 100%;
     display: flex;
     justify-content: space-evenly;
-    margin: 0;
-    padding: 0;
     color: #daa520;
 }
 
 @media screen and (max-width: 768px) {
-    .datos_juego {
+    .datos_juego_circle {
+        padding-top: 0;
+        font-size: 0.8em;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .datos_juego_circle {
+        font-size: 0.7em;
+    }
+}
+
+#mensaje_fin_circle {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    font-size: 1.2em;
+    display: none;
+    text-align: center;
+    color: #daa520;
+}
+
+@media screen and (max-width: 768px) {
+    #mensaje_fin_circle {
         font-size: 0.9em;
     }
 }
 
 @media screen and (max-width: 600px) {
-    .datos_juego {
-        font-size: 0.7em;
+    #mensaje_fin_circle {
+        font-size: 0.8em;
     }
-}
-
-#mensaje_fin {
-    font-family: "Open Sans", sans-serif;
-    font-weight: 700;
-    font-size: 1.5em;
-    display: none;
-    text-align: center;
-    font-size: 18px;
-    color: #daa520;
 }
 
 .boton_reiniciar {
     font-family: "Open Sans", sans-serif;
     font-weight: 700;
+    font-size: 1em;
     display: block;
     margin: auto;
-    padding: 10px 20px;
-    font-size: 18px;
+    padding: 10px 20px 10px 20px;
     cursor: pointer;
     background-color: #daa520;
     border: none;
     border-radius: 5px;
     color: #fff5e1;
+}
+
+@media screen and (max-width: 768px) {
+    .boton_reiniciar {
+        font-size: 0.9em;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .boton_reiniciar {
+        font-size: 0.8em;
+    }
+}
+
+#juego_adivina_el_numero {
+    display: none; 
+    width: 75%;
+    height: auto;
+}
+
+.datos_juego_adivina {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #daa520;
+}
+
+#mensaje_fin_adivina {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    font-size: 1.5em;
+    display: none;
+    text-align: center;
+    color: #daa520;
 }

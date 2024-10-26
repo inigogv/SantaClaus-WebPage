@@ -5,21 +5,28 @@ let intervalo_movimiento;
 
 function mostrar_iniciar_juego_click_the_circle() {
     document.getElementById("img_juego").style.display = "none";
+    document.getElementById("juego_adivina_el_numero").style.display = "none";
     document.getElementById("juego_click_the_circle").style.display = "block";
-    document.getElementById("boton_empezar_juego_click_the_circle").style.display = "block";
-    document.getElementById("boton_salir").style.display = "none";
-    document.getElementById("mensaje_fin").style.display = "none";
-    document.getElementById("tablero_juego").style.display = "block";
+    document.getElementById("boton_empezar_circle").style.display = "block";
+    document.getElementById("boton_salir_circle").style.display = "none";
+    document.getElementById("mensaje_fin_circle").style.display = "none";
+    document.getElementById("tablero_juego_circle").style.display = "none";
 
     puntos = 0;
     tiempo_restante = 90;
-    document.getElementById("puntos").innerText = puntos;
-    document.getElementById("tiempo").innerText = tiempo_restante;
+    document.getElementById("puntos_circle").innerText = puntos;
+    document.getElementById("tiempo_circle").innerText = tiempo_restante;
+    document.querySelector(".datos_juego_circle").style.display = "none";
 }
 
 function iniciar_juego_click_the_circle() {
-    document.getElementById("boton_empezar_juego_click_the_circle").style.display = "none";
-    document.getElementById("boton_salir").style.display = "inline";
+    document.getElementById("boton_empezar_circle").style.display = "none";
+    document.getElementById("boton_salir_circle").style.display = "inline";
+    document.getElementById("tablero_juego_circle").style.display = "block";
+    document.querySelector(".datos_juego_circle").style.display = "flex";
+
+    document.getElementById("puntos_circle").innerText = puntos;
+    document.getElementById("tiempo_circle").innerText = tiempo_restante;
 
     mover_circulo();
     intervalo_tiempo = setInterval(reducir_tiempo, 1000);
@@ -27,7 +34,7 @@ function iniciar_juego_click_the_circle() {
 }
 
 function mover_circulo() {
-    let tablero = document.getElementById("tablero_juego");
+    let tablero = document.getElementById("tablero_juego_circle");
     let circulo = document.getElementById("circulo");
     if (!circulo) {
         circulo = document.createElement("div");
@@ -53,31 +60,31 @@ function mover_circulo() {
 
 function sumar_punto() {
     puntos++;
-    document.getElementById("puntos").innerText = puntos;
+    document.getElementById("puntos_circle").innerText = puntos;
 }
 
 function reducir_tiempo() {
     tiempo_restante--;
-    document.getElementById("tiempo").innerText = tiempo_restante;
+    document.getElementById("tiempo_circle").innerText = tiempo_restante;
 
     if (tiempo_restante == 0) {
-        salir_del_juego();
+        salir_del_juego_circle();
     }
 }
 
-function salir_del_juego() {
+function salir_del_juego_circle() {
     clearInterval(intervalo_tiempo);
     clearInterval(intervalo_movimiento);
     mostrar_fin_juego();
 }
 
 function mostrar_fin_juego() {
-    document.getElementById("mensaje_fin").style.display = "block";
-    document.getElementById("boton_salir").style.display = "none";
-    document.getElementById("tablero_juego").style.display = "none";
+    document.getElementById("mensaje_fin_circle").style.display = "block";
+    document.getElementById("boton_salir_circle").style.display = "none";
+    document.getElementById("tablero_juego_circle").style.display = "none";
 }
 
-function reiniciar_juego() {
+function reiniciar_juego_circle() {
     mostrar_iniciar_juego_click_the_circle();
     iniciar_juego_click_the_circle();
 }

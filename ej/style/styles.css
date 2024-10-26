@@ -52,3 +52,29 @@ body{
         font-size: 1.5em;
     }
 }
+
+.titulo_juego{
+    font-family: "Merriweather", sans-serif;
+    font-weight: 700;
+    font-size: 2em;
+    color: #074207;
+    text-align: center;
+    margin: 0;
+    padding-bottom: 20px;
+}
+
+@media screen and (max-width:768px){
+    .titulo_juego{    
+        font-size: 1.2em;
+        padding-top: 10px;
+        padding-bottom: 5px;
+    }
+}
+
+@media screen and (max-width:600px){
+    .titulo_juego{
+        font-size: 1em;
+        padding-top: 5px;
+        padding-bottom: 0;
+    }
+}
