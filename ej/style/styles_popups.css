@@ -5,7 +5,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 40%;
-    height: 80vh;
+    height: 60vh;
     display: none;
     justify-content: center;
     align-items: center;
@@ -54,6 +54,14 @@
     gap: 10px;
     width: 100%;
 }
+
+/*
+@media screen and (max-width:600px){
+    .cajas_agrupadas{    
+        flex-direction: column;
+    }
+}
+*/
 
 .caja_label_popup{
     display: flex;
