@@ -11,7 +11,7 @@ function formulario_hijos() {
         const campo = `
             <div class="hijo">
                 <p class="titulo_hijo">Hijo/hija ${i}</p>
-                <div class="nom_edad_hijo">
+                <div class="cajas_agrupadas">
                     <div class="caja_label_popup">
                         <label class= "etiqueta_cajas_popup" for="nombre_hijo_${i}">Nombre</label>
                         <input class = "caja_escribir" type="text" id="nombre_hijo_${i}" minlength="3" required placeholder="Nombre">
@@ -85,7 +85,8 @@ function cancelar_registro() {
 
 function limpiar_registro() {
     if (confirm("¿Estás seguro de que deseas limpiar todos los campos?")) {
-        document.getElementById("formulario_popup").reset();
+        document.getElementById("formulario_registro").reset();
+        document.getElementById("formulario_hijos").innerHTML= "";
     }
 }
 
@@ -141,8 +142,54 @@ function validar_registro() {
 
     // Si es válido, puedes enviar el formulario o realizar otras acciones
     if (se_puede_aceptar) {
-        alert("Registro exitoso."); // Aquí puedes agregar la lógica para registrar al usuario
+        guardar_usuario_localstorage();
+        // Aquí puedes agregar la lógica para registrar al usuario
         // Puedes también llamar a una función para enviar el formulario, si es necesario
         // document.getElementById("formulario_registro").submit();
     }
 }
+
+function guardar_usuario_localstorage() {
+    const nombre_usuario = document.getElementById('nombre_usuario').value;
+    const contraseña_usuario = document.getElementById('contraseña_usuario').value;
+    const email_usuario = document.getElementById('email_usuario').value;
+    const ciudad_usuario = document.getElementById('ciudad_usuario').value;
+    const pais_usuario = document.getElementById('pais_usuario').value;
+    const genero = document.getElementById('genero').value;
+    const num_hijos = document.getElementById('num_hijos').value;
+
+
+    const usuario = {
+        nombre: nombre_usuario,
+        contraseña: contraseña_usuario,
+        email: email_usuario,
+        ciudad: ciudad_usuario,
+        pais: pais_usuario,
+        genero: genero,
+        num_hijos: num_hijos,
+        hijos: []
+    };
+
+
+    for (let i = 1; i <= num_hijos; i++) {
+        const nombre_hijo = document.getElementById("nombre_hijo_${i}").value;
+        const edad_hijo = document.getElementById("edad_hijo_${i}").value;
+        const juguetes_hijo = document.getElementById("juguetes_hijo_${i}").value;
+
+
+        usuario.hijos.push({
+            nombre: nombre_hijo,
+            edad: edad_hijo,
+            juguetes: juguetes_hijo
+        });
+    }
+
+
+    localStorage.setItem("usuario", JSON.stringify(usuario));
+    alert("Usuario registrado con éxito.");
+    document.getElementById("formulario_registro").reset();
+    document.getElementById("formulario_hijos").innerHTML = "";
+    document.getElementById("registro_popup").style.display = "none";
+}
+
+
