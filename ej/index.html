@@ -51,22 +51,22 @@
                 <form class= "formulario_popup" id= "formulario_registro">
                     <div class= "cajas_agrupadas">
                         <div class= "caja_label_popup">
-                            <label class= "etiqueta_cajas_popup" for= "nombre_usuario"> Nombre de usuario </label>
+                            <label class= "etiqueta_cajas_popup" for= "nombre_usuario"> Nombre de usuario * </label>
                             <input class= "caja_escribir" type= "text" id= "nombre_usuario" minlength="3" required placeholder="Nombre usuario">
                         </div>
                         <div class= "caja_label_popup">
-                            <label class= "etiqueta_cajas_popup" for= "email_usuario"> Email </label>
+                            <label class= "etiqueta_cajas_popup" for= "email_usuario"> Email * </label>
                             <input class= "caja_escribir" type= "email" id= "email_usuario" required placeholder="nombre@dominio.ext">
                         </div>
                     </div>
                     <div>
                         <div class= "cajas_agrupadas">
                             <div class= "caja_label_popup">
-                                <label class= "etiqueta_cajas_popup" for="contraseña_usuario"> Contraseña </label>
+                                <label class= "etiqueta_cajas_popup" for="contraseña_usuario"> Contraseña * </label>
                                 <input class= "caja_escribir" type= "password" id= "contraseña_usuario" minlength="12" required>
                             </div>
                             <div class= "caja_label_popup">
-                                <label class= "etiqueta_cajas_popup" for="repetir_contraseña_usuario"> Repetir contraseña </label>
+                                <label class= "etiqueta_cajas_popup" for="repetir_contraseña_usuario"> Repetir contraseña * </label>
                                 <input class= "caja_escribir" type= "password" id= "repetir_contraseña_usuario" required>
                             </div>
                         </div>
@@ -75,18 +75,18 @@
                     </div>
                     <div class= "cajas_agrupadas">
                         <div class= "caja_label_popup">
-                            <label class= "etiqueta_cajas_popup" for="ciudad_usuario"> Ciudad </label>
+                            <label class= "etiqueta_cajas_popup" for="ciudad_usuario"> Ciudad * </label>
                             <input class= "caja_escribir" type="text" id="ciudad_usuario" minlength="3" required placeholder="Ciudad">
                         </div>
                         <div class= "caja_label_popup">
-                            <label class= "etiqueta_cajas_popup" for="pais_usuario"> País </label>
+                            <label class= "etiqueta_cajas_popup" for="pais_usuario"> País * </label>
                             <input class= "caja_escribir" type="text" id="pais_usuario" minlength="3" required placeholder="País">
                         </div>
                     </div>
                     
                     <div class= "cajas_agrupadas">
                         <div class= "caja_label_popup">
-                            <label class= "etiqueta_cajas_popup" for="genero"> Género </label>
+                            <label class= "etiqueta_cajas_popup" for="genero"> Género * </label>
                             <select class= "caja_escribir" id="genero">
                                 <option> Masculino </option>
                                 <option> Femenino </option>
@@ -95,7 +95,7 @@
                             </select>
                         </div>
                         <div class= "caja_label_popup">
-                            <label class= "etiqueta_cajas_popup" for="num_hijos"> ¿Cuántos hijos tienes? </label>
+                            <label class= "etiqueta_cajas_popup" for="num_hijos"> ¿Cuántos hijos tienes? * </label>
                             <input class= "caja_escribir" type="number" id="num_hijos" oninput="formulario_hijos()" min="0" required>
                         </div>
                     </div>
@@ -114,13 +114,13 @@
                 <h3 class= "title_section_h3"> Iniciar Sesión </h3>
                 <form class= "formulario_popup" id= "formulario_inicio_sesion">
                     <div class= "caja_label_popup">
-                        <label class= "etiqueta_cajas_popup" for= "nombre_usuario"> Nombre de usuario </label>
-                        <input class= "caja_escribir" type= "text" id= "nombre_usuario" minlength="3" required placeholder="Nombre usuario">
+                        <label class= "etiqueta_cajas_popup" for= "nombre_inicio_sesion"> Nombre de usuario * </label>
+                        <input class= "caja_escribir" type= "text" id= "nombre_inicio_sesion" minlength="3" required placeholder="Nombre usuario">
                     </div>
 
                     <div class= "caja_label_popup">
-                        <label class= "etiqueta_cajas_popup" for="contraseña_usuario"> Contraseña </label>
-                        <input class= "caja_escribir" type= "password" id= "contraseña_usuario" minlength="12" required>
+                        <label class= "etiqueta_cajas_popup" for="contraseña_inicio_sesion"> Contraseña * </label>
+                        <input class= "caja_escribir" type= "password" id= "contraseña_inicio_sesion" minlength="12" required>
                     </div>
                 </form>
             </div>
