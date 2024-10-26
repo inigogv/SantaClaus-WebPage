@@ -15,7 +15,9 @@ function entrar_cuenta() {
     const usuario = JSON.parse(localStorage.getItem("usuario"));
 
     if (nombre_usuario === usuario.nombre && contraseña_usuario === usuario.contraseña) {
+        const usuario_activo = true;
         alert("Inicio de sesión correcto");
+        localStorage.setItem("Activo", JSON.stringify(usuario_activo));
         document.getElementById("inicio_sesion_popup").style.display = "none";
         perfil_barra_navegacion();
     } else {
@@ -25,15 +27,7 @@ function entrar_cuenta() {
 
 function perfil_barra_navegacion() {
     document.getElementById("botones_registro_inicio").style.display = "none";
-    const perfil_barra_navegacion = document.getElementById("mi_perfil");
-    perfil_barra_navegacion.style.display = "flex";
-
-    const foto_perfil = `
-            <div class="foto_perfil">
-                <img class= "imagen_perfil" src="images/foto_perfil.png" alt="Foto de perfil" onclick="menu_desplegable()">
-            </div>
-        `;
-    perfil_barra_navegacion.innerHTML += foto_perfil;
+    perfil_barra_navegacion = document.getElementById("mi_perfil").style.display = "flex";
 }
 
 function menu_desplegable() {
@@ -44,14 +38,124 @@ function menu_desplegable() {
     } else {
         menu.style.display = "flex";
     }
-    if (menu.innerHTML == "") {
-        const menu_desplegable = `
-                <ul class="opciones_menu">
-                    <li class="datos_perfil">Mi perfil</li>
-                    <li class="cartas_perfil">Mis cartas</li>
-                    <li class="cerrar_perfil" onclick="cerrar_sesion()">Cerrar sesión</li>
-                </ul>
-    `;
-    menu.innerHTML += menu_desplegable;
+}
+
+function ver_mis_datos() {
+    document.getElementById("mis_datos").style.display = "flex";
+    const usuario = JSON.parse(localStorage.getItem("usuario"));
+    if(usuario) {
+        document.getElementById("nombre_usuario").value = usuario.nombre;
+        document.getElementById("email_usuario").value = usuario.email;
+        document.getElementById("contraseña_usuario").value = usuario.contraseña;
+        document.getElementById("repetir_contraseña_usuario").value = usuario.contraseña;
+        document.getElementById("ciudad_usuario").value = usuario.ciudad;
+        document.getElementById("pais_usuario").value = usuario.pais;
+        document.getElementById("genero").value = usuario.genero;
+        document.getElementById("num_hijos").value = usuario.num_hijos;
     }
 }
+
+function guardar_datos() {
+    const nombre_usuario = document.getElementById("nombre_usuario").value;
+    const email_usuario = document.getElementById("email_usuario").value;
+    const contraseña_usuario = document.getElementById("contraseña_usuario").value;
+    const ciudad_usuario = document.getElementById("ciudad_usuario").value;
+    const pais_usuario = document.getElementById("pais_usuario").value;
+    const genero = document.getElementById("genero").value;
+    const num_hijos = document.getElementById("num_hijos").value;
+
+    const usuario = {
+        nombre: nombre_usuario,
+        email: email_usuario,
+        contraseña: contraseña_usuario,
+        ciudad: ciudad_usuario,
+        pais: pais_usuario,
+        genero: genero,
+        num_hijos: num_hijos
+    }
+
+    localStorage.setItem("usuario", JSON.stringify(usuario));
+    alert("Datos guardados correctamente");
+    document.getElementById("mis_datos").style.display = "none";
+}
+
+function cerrar_mis_datos() {
+    document.getElementById("mis_datos").style.display = "none";
+}
+/*
+function ver_mis_cartas() {
+    popup_cartas = document.getElementById("mis_cartas")
+    cartas_usuario = JSON.parse(localStorage.getItem("cartas_usuario")) || [];
+
+    popup_cartas.innerHTML = cartas_usuario.length > 0 
+    ? cartas_usuario.map((carta,index) => generar_carta(carta, index)).join(""): 
+    "<p>No has enviado ninguna carta</p>";
+
+    document.getElementById("mis_cartas").style.display = "block";
+}
+
+function generar_carta(carta, index) {
+    return `
+        <div class="box" draggable="true" ondragstart="drag(event, ${index})" ondrop="drop(event, ${index})" ondragover="allowDrop(event)">
+                <div class="datos_box">
+                    <img class="foto_carta" src="${carta.imagen}" alt="Foto ${carta.nombre}">
+                    <div class="datos">
+                        <p>${carta.nombre}</p>
+                        <p class="lugar_residencia">${carta.lugar}</p>
+                    </div>
+                </div>
+                <div class="texto_carta">
+                    <p>${carta.mensaje}</p>
+                </div>
+                <button onclick="eliminarCarta(${index})" class="eliminar_carta">Eliminar</button>
+            </div>
+        `;
+}
+*/
+
+function enviar_carta() {
+    const usuario = JSON.parse(localStorage.getItem("usuario"));
+    const usuario_activo = JSON.parse(localStorage.getItem("Activo"));
+
+    if (usuario_activo === false) {
+        alert("Debes iniciar sesión para enviar una carta");
+        return;
+    }
+
+    const nombre = document.getElementById("nombre").value;
+    const email = document.getElementById("email").value;
+    const ciudad = document.getElementById("ciudad").value;
+    const pais = document.getElementById("pais").value;
+    const carta = document.getElementById("carta").value;
+
+    if (email !== usuario.email) {
+        alert("El email no coincide con el de tu cuenta");
+        return;
+    }
+
+    const carta_usuario = {
+        nombre: nombre,
+        email: email,
+        ciudad: ciudad,
+        pais: pais,
+        carta: carta
+    };
+
+    let cartas = JSON.parse(localStorage.getItem("cartas_enviadas")) || [];
+    cartas.push(carta_usuario);
+    localStorage.setItem("cartas_enviadas", JSON.stringify(cartas));
+    alert("Carta enviada correctamente");
+    document.getElementById("formulario_mi_carta").reset();
+
+}
+function cerrar_sesion() {
+    if (confirm("¿Estás seguro de que deseas cerrar sesión?")) {
+        document.getElementById("botones_registro_inicio").style.display = "flex";
+        document.getElementById("mi_perfil").style.display = "none";
+        document.getElementById("menu_desplegable").style.display = "none";
+        document.getElementById("mis_datos").style.display = "none";
+        const usuario_activo = false;
+        localStorage.setItem("Activo", JSON.stringify(usuario_activo));
+    }
+}
+

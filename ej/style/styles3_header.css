@@ -109,13 +109,13 @@
     background-color: #ffffff95;
     right: 0;
     top: 54px;
+    flex-direction: column;
 }
 
 .opciones_menu{
     list-style-type: none;
     padding: 0 10px;
 }
-
 .datos_perfil{
     cursor: pointer;
     padding: 5px 0;
@@ -141,4 +141,34 @@
 
 .cerrar_perfil:hover{
     color: #fff5e1;
+}
+
+.popup_perfil{
+    position: fixed;
+    background-color: #fffefee9;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    height: 60vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+.popup_perfil_mis_cartas{
+    position: fixed;
+    background-color: #fffefee9;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    box-sizing: border-box;
 }

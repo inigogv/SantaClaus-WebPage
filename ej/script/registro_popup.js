@@ -162,7 +162,7 @@ function guardar_usuario_localstorage() {
         pais: pais_usuario,
         genero: genero,
         num_hijos: num_hijos,
-        hijos: []
+        hijos: [],
     };
 
     for (let i = 1; i <= num_hijos; i++) {
