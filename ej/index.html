@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="fonts/fonts.css">
     <script src="script/contador.js"></script>
     <script src="script/registro_popup.js"></script>
+    <script src="script/juego_circle.js"></script>
 </head>
 
 <body>
@@ -253,24 +254,38 @@
             </div>
         </section>
 
-        <section class= "pages" id="fifth_page">
+        <section class="pages" id="fifth_page">
             <div>
-                <h2 class= "title_section">¡Juega!</h2>
+                <h2 class="title_section">¡Juega!</h2>
             </div>
-            <div class= "juegos_section">
+            <div class="juegos_section">
                 <div class="frase_juegos_section">
-                    <p class="letras_frase_juegos_section"> Elije tu juego favorito de Santa</p>
+                    <p class="letras_frase_juegos_section">Elije tu juego favorito de Santa</p>
                 </div>
                 <div class="subseccion_juegos">
                     <div class="lista_juegos">
                         <ol>
-                            <li class="juego"> <button class= "boton_juego" onclick="document.getElementById('img_juego').src='images/juego1.jpg'">Juego Super Santa Run </button> </li>
-                            <li class="juego"> <button class= "boton_juego" onclick="document.getElementById('img_juego').src='images/juego2.jpg'">Juego Santa Haircut </button> </li>
-                            <li class="juego"> <button class= "boton_juego" onclick="document.getElementById('img_juego').src='images/juego3.jpg'">Juego Santa Chimney Challenge </button> </li>
+                            <li class="juego">
+                                <button class="boton_juego" onclick="iniciarJuegoClickTheCircle()">Juego Click the Circle</button>
+                            </li>
+                            <li class="juego">
+                                <button class= "boton_juego" onclick="mostrarImagen('images/juego2.jpg')">Juego Santa Haircut</button>
+                            </li>
+                            <li class="juego">
+                                <button class= "boton_juego" onclick="mostrarImagen('images/juego3.jpg')">Juego Santa Chimney Challenge</button>
+                            </li>
                         </ol>
                     </div>
-                <div class="fondo_juegos">
-                    <img id="img_juego" src="images/juega.png" alt="Juegos">
+                    <div class="fondo_juegos">
+                        <img id="img_juego" src="images/juega.png" alt="Juegos">
+                        <div id="juego_click_the_circle">
+                            <div class = "datos_juego">
+                                <p>Puntuación: <span id="puntos">0</span></p>
+                                <p>Tiempo restante: <span id="tiempo">90</span>s</p>
+                            </div>
+                            <div id="tablero_juego" class="tablero_juego"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

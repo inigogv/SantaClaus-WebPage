@@ -155,3 +155,28 @@
         width: 90%;
     }
 }
+
+#juego_click_the_circle {
+    display: none; 
+    width: 75%;
+    height: auto;
+}
+
+.tablero_juego {
+    position: relative; 
+    width: 100%;
+    height: 50vh;
+    background-color: #9d3838;
+    border: 1px solid #daa520;
+    border-radius: 70px;
+    margin: auto;
+}
+
+.datos_juego{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0;
+    padding: 0;
+    color: #daa520;
+}
