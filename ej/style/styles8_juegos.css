@@ -172,11 +172,87 @@
     margin: auto;
 }
 
+@media screen and (max-width: 768px) {
+    #tablero_juego {
+        height: 25vh;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #tablero_juego {
+        height: 20vh;
+    }
+}
+
+#boton_empezar_juego_click_the_circle{
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    display: block;
+    margin: auto;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: #daa520;
+    border: none;
+    border-radius: 5px;
+    color: #fff5e1;
+}
+
+#boton_salir{
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+    font-size: 0.8em;
+    background-color: #daa520;
+    border: none;
+    padding: 5px 10px;  
+    border-radius: 5px;
+    color: #fff5e1;
+    cursor: pointer;
+}
+
 .datos_juego{
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
     width: 100%;
     display: flex;
     justify-content: space-evenly;
     margin: 0;
     padding: 0;
     color: #daa520;
+}
+
+@media screen and (max-width: 768px) {
+    .datos_juego {
+        font-size: 0.9em;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .datos_juego {
+        font-size: 0.8em;
+    }
+}
+
+#mensaje_fin {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    font-size: 1.5em;
+    display: none;
+    text-align: center;
+    font-size: 18px;
+    color: #daa520;
+}
+
+.boton_reiniciar {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    display: block;
+    margin: auto;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: #daa520;
+    border: none;
+    border-radius: 5px;
+    color: #fff5e1;
 }

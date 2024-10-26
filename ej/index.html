@@ -290,24 +290,30 @@
                     <div class="lista_juegos">
                         <ol>
                             <li class="juego">
-                                <button class="boton_juego" onclick="iniciarJuegoClickTheCircle()">Juego Click the Circle</button>
+                                <button class="boton_juego" onclick="mostrar_iniciar_juego_click_the_circle()">Juego Click the Circle</button>
                             </li>
                             <li class="juego">
-                                <button class= "boton_juego" onclick="mostrarImagen('images/juego2.jpg')">Juego Santa Haircut</button>
+                                <button class= "boton_juego" onclick="mostrar_imagen('images/juego2.jpg')">Juego Santa Haircut</button>
                             </li>
                             <li class="juego">
-                                <button class= "boton_juego" onclick="mostrarImagen('images/juego3.jpg')">Juego Santa Chimney Challenge</button>
+                                <button class= "boton_juego" onclick="mostrar_imagen('images/juego3.jpg')">Juego Santa Chimney Challenge</button>
                             </li>
                         </ol>
                     </div>
                     <div class="fondo_juegos">
                         <img id="img_juego" src="images/juega.png" alt="Juegos">
                         <div id="juego_click_the_circle">
+                            <button id= "boton_empezar_juego_click_the_circle" onclick="iniciar_juego_click_the_circle()"> Empezar </button>
                             <div class = "datos_juego">
                                 <p>Puntuación: <span id="puntos">0</span></p>
                                 <p>Tiempo restante: <span id="tiempo">90</span>s</p>
+                                <button id="boton_salir" onclick="salir_del_juego()">Exit</button>
                             </div>
                             <div id="tablero_juego" class="tablero_juego"></div>
+                            <div id="mensaje_fin">
+                                <p>¡FIN DE LA PARTIDA!</p>
+                                <button class="boton_reiniciar" onclick="reiniciar_juego()">Jugar otra vez</button>
+                            </div>
                         </div>
                     </div>
                 </div>
