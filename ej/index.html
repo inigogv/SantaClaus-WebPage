@@ -93,10 +93,11 @@
                         </div>
                         <div class= "caja_label_popup">
                             <label class= "etiqueta_cajas_popup" for="num_hijos"> ¿Cuántos hijos tienes? </label>
-                            <input class= "caja_escribir" type="number" id="num_hijos" min="0" required>
+                            <input class= "caja_escribir" type="number" id="num_hijos" oninput="formulario_hijos()" min="0" required>
                             <!--mirar lo que hay que hacer con los hijos-->
                         </div>
                     </div>
+                    <div id="formulario_hijos"></div>
                     <div class= "botones_popup_registro">
                         <button class="botones_registro" type="button" onclick="validar_registro()"> Aceptar </button>
                         <button class="botones_registro" type="reset" onclick="limpiar_registro()"> Limpiar </button>
