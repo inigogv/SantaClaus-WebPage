@@ -31,7 +31,7 @@
     }
 }
 
-.cuadrado_popup{
+.cuadrado_registro_popup{
     width: 100%;
     height: 100%;
     display: flex;
@@ -39,7 +39,7 @@
     padding: 20px;
 }
 
-.formulario_popup{
+.formulario_registro_popup{
     padding: 20px 0;
     flex-grow: 1;
     overflow-y: auto;
@@ -55,15 +55,13 @@
     width: 100%;
 }
 
-
 @media screen and (max-width:600px){
     .cajas_agrupadas{    
         flex-direction: column;
     }
 }
 
-
-.caja_label_popup{
+.caja_label_registro_popup{
     display: flex;
     flex-direction: column;
     padding: 5px 0;
