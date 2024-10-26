@@ -140,12 +140,8 @@ function validar_registro() {
         alert("El número de hijos debe der como mínimo 0.");
     }
 
-    // Si es válido, puedes enviar el formulario o realizar otras acciones
     if (se_puede_aceptar) {
         guardar_usuario_localstorage();
-        // Aquí puedes agregar la lógica para registrar al usuario
-        // Puedes también llamar a una función para enviar el formulario, si es necesario
-        // document.getElementById("formulario_registro").submit();
     }
 }
 
@@ -158,7 +154,6 @@ function guardar_usuario_localstorage() {
     const genero = document.getElementById('genero').value;
     const num_hijos = document.getElementById('num_hijos').value;
 
-
     const usuario = {
         nombre: nombre_usuario,
         contraseña: contraseña_usuario,
@@ -169,7 +164,6 @@ function guardar_usuario_localstorage() {
         num_hijos: num_hijos,
         hijos: []
     };
-
 
     for (let i = 1; i <= num_hijos; i++) {
         const nombre_hijo = document.getElementById("nombre_hijo_${i}").value;
@@ -183,7 +177,6 @@ function guardar_usuario_localstorage() {
             juguetes: juguetes_hijo
         });
     }
-
 
     localStorage.setItem("usuario", JSON.stringify(usuario));
     alert("Usuario registrado con éxito.");
