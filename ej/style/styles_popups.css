@@ -142,6 +142,26 @@
     }
 }
 
+.nom_edad_hijo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hijo {
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo_hijo{
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    font-size: 0.8em;
+    color: #000000;
+    display: block;
+    margin-bottom: 0;
+}
+
 .error_contraseña{
     font-family: "Open Sans", sans-serif;
     font-weight: 100;
@@ -164,22 +184,24 @@
     }
 }
 
-.nom_edad_hijo{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.hijo {
-    justify-content: center;
-    align-items: center;
-}
-
-.titulo_hijo{
+.error_coincidencia_contraseña{
     font-family: "Open Sans", sans-serif;
-    font-weight: 700;
+    font-weight: 100;
     font-size: 0.8em;
-    color: #000000;
-    display: block;
-    margin-bottom: 0;
+    color: #ff0000;
+    display: none;
+    text-align: center;
+    padding: 0 35px 0 40px;
+}
+
+@media screen and (max-width:768px){
+    .error_coincidencia_contraseña{ 
+        font-size: 0.7em;
+    }
+}
+
+@media screen and (max-width:600px){
+    .error_coincidencia_contraseña{    
+        font-size: 0.6em;
+    }
 }

@@ -47,11 +47,28 @@ const restricciones_contraseña = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d{2,})(?=.*[!@#$
 
 function validar_contraseña() {
     const contraseña = document.getElementById("contraseña_usuario");
+    const repetirContraseña = document.getElementById("repetir_contraseña_usuario");
     const mnsj_error = document.getElementById("mensaje_de_error");
+    const mnsj_error_coincidencia = document.getElementById("mensaje_de_error_coincidencia");
 
     contraseña.addEventListener("blur", function() {
         validar_contenido(contraseña, mnsj_error);
     });
+
+    repetirContraseña.addEventListener("blur", function() {
+        comprobar_coincidencia(contraseña, repetirContraseña, mnsj_error_coincidencia);
+    
+    });
+
+    contraseña.addEventListener("input", function() {
+        mnsj_error.style.display = "none";
+        mnsj_error_coincidencia.style.display = "none";
+    });
+
+    repetirContraseña.addEventListener("input", function() {
+        mnsj_error_coincidencia.style.display = "none";
+    });
+    
 }
 
 function validar_contenido(contraseña, mnsj_error) {
@@ -59,6 +76,14 @@ function validar_contenido(contraseña, mnsj_error) {
         mnsj_error.style.display = "block";
     } else {
         mnsj_error.style.display = "none";
+    }
+}
+
+function comprobar_coincidencia(contraseña, repetirContraseña, mnsj_error_coincidencia) {
+    if (contraseña.value !== repetirContraseña.value) {
+        mnsj_error_coincidencia.style.display = "block";
+    } else {
+        mnsj_error_coincidencia.style.display = "none";
     }
 }
 
