@@ -55,13 +55,13 @@
     width: 100%;
 }
 
-/*
+
 @media screen and (max-width:600px){
     .cajas_agrupadas{    
         flex-direction: column;
     }
 }
-*/
+
 
 .caja_label_popup{
     display: flex;
