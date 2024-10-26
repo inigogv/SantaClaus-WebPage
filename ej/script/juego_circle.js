@@ -4,17 +4,14 @@ let intervaloTiempo;
 let intervaloMovimiento;
 
 function iniciarJuegoClickTheCircle() {
-    // Ocultar la imagen y mostrar el juego
     document.getElementById('img_juego').style.display = 'none';
     document.getElementById('juego_click_the_circle').style.display = 'block';
 
-    // Reiniciar el juego
     puntos = 0;
     tiempoRestante = 90;
     document.getElementById('puntos').innerText = puntos;
     document.getElementById('tiempo').innerText = tiempoRestante;
 
-    // Crear el círculo si no existe
     let tablero = document.getElementById('tablero_juego');
     let circulo = document.getElementById('circulo');
     if (!circulo) {
@@ -30,7 +27,6 @@ function iniciarJuegoClickTheCircle() {
         tablero.appendChild(circulo);
     }
 
-    // Iniciar el movimiento y el temporizador
     moverCirculo();
     intervaloTiempo = setInterval(reducirTiempo, 1000);
     intervaloMovimiento = setInterval(moverCirculo, 1200);
