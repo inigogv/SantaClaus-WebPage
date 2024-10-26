@@ -75,10 +75,10 @@ function reducir_tiempo() {
 function salir_del_juego_circle() {
     clearInterval(intervalo_tiempo);
     clearInterval(intervalo_movimiento);
-    mostrar_fin_juego();
+    mostrar_fin_juego_circle();
 }
 
-function mostrar_fin_juego() {
+function mostrar_fin_juego_circle() {
     document.getElementById("mensaje_fin_circle").style.display = "block";
     document.getElementById("boton_salir_circle").style.display = "none";
     document.getElementById("tablero_juego_circle").style.display = "none";

@@ -316,7 +316,7 @@
                                     <p>Tiempo restante: <span id="tiempo_circle">90</span>s</p>
                                     <button id="boton_salir_circle" onclick="salir_del_juego_circle()">Exit</button>
                                 </div>
-                                <div id="tablero_juego_circle" class="tablero_juego_circle"></div>
+                                <div id="tablero_juego_circle" class="class_tablero_juego_circle"></div>
                                 <div id="mensaje_fin_circle">
                                     <p>FIN DE LA PARTIDA</p>
                                     <button class="boton_reiniciar" onclick="reiniciar_juego_circle()">Jugar otra vez</button>
@@ -325,18 +325,28 @@
                         </div>
 
                         <div id="juego_adivina_el_numero">
-                            <div id="tablero_juego_adivina" class="tablero_juego_adivina">
+                            <div class= "espacio_juego">
+                                <h4 class="titulo_juego">Adivina el número</h4>
                                 <button id="boton_empezar_adivina" onclick="iniciar_juego_adivina_el_numero()"> Empezar </button>
                                 <div class="datos_juego_adivina">
-                                    <p>Adivina el número entre 1 y 100:</p>
-                                    <input type="number" id="numero_adivinado" min="1" max="100" />
-                                    <button id="boton_adivinar" onclick="adivinar_numero()">Adivinar</button>
-                                    <p>Puntuación: <span id="puntos_adivina">0</span></p>
                                     <p>Intentos restantes: <span id="intentos_adivina">10</span></p>
                                     <button id="boton_salir_adivina" onclick="salir_del_juego_adivina()">Exit</button>
                                 </div>
+                                <div id="tablero_juego_adivina" class="class_tablero_juego_adivina">
+                                    <p class="texto_adivinar" >Adivina el número entre 1 y 100:</p>
+                                    <div class="hueco_adivinar">
+                                        <input class= "insertar_numero" type="number" id="numero_adivinado" min="1" max="100" />
+                                        <button id="boton_adivinar" onclick="adivinar_numero()">Adivinar</button>
+                                    </div>
+                                </div>
                                 <div id="mensaje_fin_adivina">
-                                    <p>El número era <span id="numero_secreto_final"></span></p>
+                                    <p>FIN DE LA PARTIDA</p>
+                                    <p>El número secreto era el <span id="numero_secreto_final">0</span></p>
+                                    <button class="boton_reiniciar" onclick="reiniciar_juego_adivina()">Jugar otra vez</button>
+                                </div>
+                                <div id="mensaje_fin_adivina_enhorabuena">
+                                    <p>ENHORABUENA</p>
+                                    <p>Has adivinado el número></p>
                                     <button class="boton_reiniciar" onclick="reiniciar_juego_adivina()">Jugar otra vez</button>
                                 </div>
                             </div>
