@@ -16,6 +16,23 @@
     padding-left: 10px;
 }
 
+@media screen and (max-width:768px){
+    .logo{
+        width: 40px;
+        height: 40px;
+        padding-left: 5px;
+    }
+}
+
+
+@media screen and (max-width:600px){
+    .logo{
+        width: 30px;
+        height: 30px;
+        padding-left: 0;
+    }
+}
+
 .iconos_nav{
     font-family: "Open Sans", sans-serif;
     font-weight: 300;
@@ -24,13 +41,13 @@
 
 @media screen and (max-width:768px){
     .iconos_nav{    
-        font-size: 0.8em;
+        font-size: 0.7em;
     }
 }
 
 @media screen and (max-width:600px){
     .iconos_nav{
-        font-size: 0.7em;
+        font-size: 0.6em;
     }
 }
 
@@ -59,6 +76,7 @@
     background-color: #074207;
     font-family:"Open Sans", sans-serif;
     font-weight: 400;
+    font-size: 0.8em;
     cursor: pointer;
 }
 
@@ -70,8 +88,7 @@
 
 @media screen and (max-width:600px){
     .entrar{
-        font-size: 0.6em;
+        font-size: 0.5em;
         display: flex;
     }
 }
-

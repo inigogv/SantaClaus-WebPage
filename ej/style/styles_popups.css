@@ -36,6 +36,30 @@
     
 }
 
+.cajas_nom_email{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.cajas_contraseñas{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.cajas_lugar{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.cajas_genero_hijos{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
 .caja_label_popup{
     padding: 10px;
 }
@@ -82,29 +106,11 @@
     }
 }
 
-.cajas_contraseñas{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.cajas_lugar{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.cajas_genero_hijos{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .botones_popup_registro{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    padding: 20px 0 10px 15px;
+    padding: 20px 0 10px 10px;
 }
 
 .botones_registro{
@@ -135,6 +141,8 @@
     font-size: 0.8em;
     color: #ff0000;
     display: none;
+    text-align: center;
+    padding: 0 35px 0 40px;
 }
 
 @media screen and (max-width:768px){

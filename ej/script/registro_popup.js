@@ -20,7 +20,7 @@ function validar_contraseña() {
     const contraseña = document.getElementById("contraseña_usuario");
     const mnsj_error = document.getElementById("mensaje_de_error");
 
-    contraseña.addEventListener("input", function() {
+    contraseña.addEventListener("blur", function() {
         validar_contenido(contraseña, mnsj_error);
     });
 }
