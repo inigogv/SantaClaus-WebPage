@@ -4,8 +4,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 40%;
-    height: 60vh;
+    width: 35%;
+    height: 40vh;
     display: none;
     justify-content: center;
     align-items: center;
@@ -15,7 +15,7 @@
 
 @media screen and (max-width:1000px){
     .section_inicio_sesion_popup{ 
-        width: 50%;
+        width: 45%;
     }
 }
 
@@ -27,6 +27,6 @@
 
 @media screen and (max-width:600px){
     .section_inicio_sesion_popup{    
-        width: 80%;
+        width: 50%;
     }
 }
