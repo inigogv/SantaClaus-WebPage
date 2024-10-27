@@ -34,7 +34,6 @@
             <a class= "enlace_barra_nav" href="#fourth_page">Envía tú carta</a>
             <a class= "enlace_barra_nav" href="#fifth_page">¡Juega!</a>
         </nav>
-        
         <div class="botones_barra_nav" id="botones_registro_inicio">
             <button class="entrar" id="boton_inicio_sesion" onclick="iniciar_sesion()">
                 Iniciar Sesión
@@ -54,63 +53,6 @@
                     <li class="cerrar_perfil" onclick="cerrar_sesion()">Cerrar sesión</li>
                 </ul>
             </div>
-            <div class="popup_perfil" id="mis_datos">
-                <div class="cuadrado_popup">
-                    <h3 class="title_section_h3">Mis datos</h3>
-                    <form class="formulario_popup" id="formulario_perfil">
-                        <div class= "cajas_agrupadas">
-                            <div class= "caja_label_popup">
-                                <label class= "etiqueta_cajas_popup" for= "mi_usuario"> Nombre de usuario * </label>
-                                <input class= "caja_escribir" type= "text" id= "mi_usuario" minlength="3" required placeholder="Nombre usuario">
-                            </div>
-                            <div class= "caja_label_popup">
-                                <label class= "etiqueta_cajas_popup" for= "mi_email"> Email * </label>
-                                <input class= "caja_escribir" type= "email" id= "mi_email" required placeholder="nombre@dominio.ext">
-                            </div>
-                        </div>
-                        <div class= "cajas_agrupadas">
-                            <div class= "caja_label_popup">
-                                <label class= "etiqueta_cajas_popup" for="mi_contraseña"> Contraseña * </label>
-                                <input class= "caja_escribir" type= "password" id= "mi_contraseña" minlength="12" required>
-                            </div>
-                            <div class= "caja_label_popup">
-                                <label class= "etiqueta_cajas_popup" for="mi_repetir_contraseña"> Repetir contraseña * </label>
-                                <input class= "caja_escribir" type= "password" id= "mi_repetir_contraseña" required>
-                            </div>
-                        </div>
-                        <div class= "cajas_agrupadas">
-                            <div class= "caja_label_popup">
-                                <label class= "etiqueta_cajas_popup" for="mi_ciudad"> Ciudad * </label>
-                                <input class= "caja_escribir" type="text" id="mi_ciudad" minlength="3" required placeholder="Ciudad">
-                            </div>
-                            <div class= "caja_label_popup">
-                                <label class= "etiqueta_cajas_popup" for="mi_pais"> País * </label>
-                                <input class= "caja_escribir" type="text" id="mi_pais" minlength="3" required placeholder="País">
-                            </div>
-                        </div>
-                        <div class= "cajas_agrupadas">
-                            <div class= "caja_label_popup">
-                                <label class= "etiqueta_cajas_popup" for="mi_genero"> Género * </label>
-                                <select class= "caja_escribir" id="mi_genero">
-                                    <option> Masculino </option>
-                                    <option> Femenino </option>
-                                    <option> Otro </option>
-                                    <option> Prefiero no decirlo </option>
-                                </select>
-                            </div>
-                            <div class= "caja_label_popup">
-                                <label class= "etiqueta_cajas_popup" for="mis_hijos"> Hijos * </label>
-                                <input class= "caja_escribir" type="number" id="mis_hijos" min="0" required>
-                            </div>
-                        </div> 
-                        <div id="formulario_hijos_ver_mis_datos"> </div>
-                    </form>
-                    <div class="botones_popup">
-                        <button class="botones_popup_estilo" type="button" onclick="guardar_datos()"> Guardar </button>
-                        <button class="botones_popup_estilo" type="button" onclick="cerrar_mis_datos()"> Cerrar </button>
-                </div>
-            </div>
-            <div class="popup_perfil_mis_cartas" id="mis_cartas"></div>
         </div>
     </header>
     <main>
@@ -177,7 +119,7 @@
                 </form>
             </div>
         </section>
-        
+
         <section class= "section_inicio_sesion_popup" id= "inicio_sesion_popup">
             <div class= "cuadrado_popup">
                 <h3 class= "title_section_h3"> Iniciar Sesión </h3>
@@ -195,6 +137,63 @@
                         <button class="botones_popup_estilo" type="button" onclick="cancelar_inicio()"> Cancelar </button>
                     </div>
                 </form>
+            </div>
+        </section>
+
+        <section class="section_mis_datos_poopup" id="mis_datos">
+            <div class="cuadrado_popup">
+                <h3 class="title_section_h3">Mis datos</h3>
+                <form class="formulario_popup" id="formulario_perfil">
+                    <div class= "cajas_agrupadas">
+                        <div class= "caja_label_popup">
+                            <label class= "etiqueta_cajas_popup" for= "mi_usuario"> Nombre de usuario * </label>
+                            <input class= "caja_escribir" type= "text" id= "mi_usuario" minlength="3" required placeholder="Nombre usuario">
+                        </div>
+                        <div class= "caja_label_popup">
+                            <label class= "etiqueta_cajas_popup" for= "mi_email"> Email * </label>
+                            <input class= "caja_escribir" type= "email" id= "mi_email" required placeholder="nombre@dominio.ext">
+                        </div>
+                    </div>
+                    <div class= "cajas_agrupadas">
+                        <div class= "caja_label_popup">
+                            <label class= "etiqueta_cajas_popup" for="mi_contraseña"> Contraseña * </label>
+                            <input class= "caja_escribir" type= "password" id= "mi_contraseña" minlength="12" required>
+                        </div>
+                        <div class= "caja_label_popup">
+                            <label class= "etiqueta_cajas_popup" for="mi_repetir_contraseña"> Repetir contraseña * </label>
+                            <input class= "caja_escribir" type= "password" id= "mi_repetir_contraseña" required>
+                        </div>
+                    </div>
+                    <div class= "cajas_agrupadas">
+                        <div class= "caja_label_popup">
+                            <label class= "etiqueta_cajas_popup" for="mi_ciudad"> Ciudad * </label>
+                            <input class= "caja_escribir" type="text" id="mi_ciudad" minlength="3" required placeholder="Ciudad">
+                        </div>
+                        <div class= "caja_label_popup">
+                            <label class= "etiqueta_cajas_popup" for="mi_pais"> País * </label>
+                            <input class= "caja_escribir" type="text" id="mi_pais" minlength="3" required placeholder="País">
+                        </div>
+                    </div>
+                    <div class= "cajas_agrupadas">
+                        <div class= "caja_label_popup">
+                            <label class= "etiqueta_cajas_popup" for="mi_genero"> Género * </label>
+                            <select class= "caja_escribir" id="mi_genero">
+                                <option> Masculino </option>
+                                <option> Femenino </option>
+                                <option> Otro </option>
+                                <option> Prefiero no decirlo </option>
+                            </select>
+                        </div>
+                        <div class= "caja_label_popup">
+                            <label class= "etiqueta_cajas_popup" for="mis_hijos"> Hijos * </label>
+                            <input class= "caja_escribir" type="number" id="mis_hijos" min="0" required>
+                        </div>
+                    </div> 
+                    <div id="formulario_hijos_ver_mis_datos"> </div>
+                </form>
+                <div class="botones_popup">
+                    <button class="botones_popup_estilo" type="button" onclick="guardar_datos()"> Guardar </button>
+                    <button class="botones_popup_estilo" type="button" onclick="cerrar_mis_datos()"> Cerrar </button>
             </div>
         </section>
 
