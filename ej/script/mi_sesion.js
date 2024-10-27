@@ -154,9 +154,9 @@ function ver_mis_cartas() {
     
     const contenedorCartas = document.getElementById("mis_cartas");
     contenedorCartas.innerHTML = ''; // Limpiar el contenedor
-
+    document.getElementById("ver_mis_cartas_popup").style.display = "flex";
+    
     if (usuario && usuario.cartas && usuario.cartas.length > 0) {
-        document.getElementById("ver_mis_cartas_popup").style.display = "flex";
         usuario.cartas.forEach(carta => {
             const cartaHTML = `
                 <li class="box"> 
