@@ -97,6 +97,8 @@ function guardar_datos() {
     const pais_usuario = document.getElementById("mi_pais").value;
     const genero = document.getElementById("mi_genero").value;
     const num_hijos = document.getElementById("mis_hijos").value;
+    const cartas_usuario = JSON.parse(localStorage.getItem("usuario_activo")).cartas || [];
+    const hijos = JSON.parse(localStorage.getItem("usuario_activo")).hijos || [];
 
     const usuario = {
         nombre: nombre_usuario,
@@ -107,7 +109,8 @@ function guardar_datos() {
         pais: pais_usuario,
         genero: genero,
         num_hijos: num_hijos,
-        hijos: []
+        hijos: hijos,
+        cartas: cartas_usuario
     }
 
     for (let i = 1; i <= num_hijos; i++) {
@@ -153,6 +156,7 @@ function ver_mis_cartas() {
     contenedorCartas.innerHTML = ''; // Limpiar el contenedor
 
     if (usuario && usuario.cartas && usuario.cartas.length > 0) {
+        document.getElementById("ver_mis_cartas_popup").style.display = "flex";
         usuario.cartas.forEach(carta => {
             const cartaHTML = `
                 <li class="box"> 
@@ -214,7 +218,6 @@ function enviar_carta() {
         alert("El email no coincide con el de tu cuenta");
         return;
     }
-
     const carta_usuario = {
         nombre: nombre,
         email: email,
