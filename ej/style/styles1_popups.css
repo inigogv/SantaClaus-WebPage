@@ -315,7 +315,7 @@
     color: #fff5e1;
 }
 
-.section_mis_datos_poopup{
+.section_mis_datos_popup{
     position: fixed;
     background-color: #fffefee9;
     top: 50%;
@@ -355,4 +355,13 @@
 
 #ver_mis_cartas_popup{
     display: none;
+}
+
+#mensaje_no_hay_cartas{
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    font-size: 1.2em;
+    display: none;
+    text-align: center;
+    color: #b54c4c;
 }

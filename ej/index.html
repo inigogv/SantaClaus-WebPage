@@ -140,7 +140,7 @@
             </div>
         </section>
 
-        <section class="section_mis_datos_poopup" id="mis_datos">
+        <section class="section_mis_datos_popup" id="mis_datos">
             <div class="cuadrado_popup">
                 <h3 class="title_section_h3">Mis datos</h3>
                 <form class="formulario_popup" id="formulario_perfil">
@@ -201,9 +201,10 @@
             <div class= "cuadrado_popup_mis_cartas">
                 <h3 class= "title_section_h3"> Mis cartas </h3>
                 <div class="boxes_section">
-                    <ul class="boxes" id="mis_cartas">
-                        <!-- Las cartas se añadirán aquí dinámicamente -->
-                    </ul>
+                    <ul class="boxes" id="mis_cartas"></ul>
+                    <div id="mensaje_no_hay_cartas">
+                        <p>No hay nignuna carta todavía.</p>
+                    </div>
                 </div>
                 <div class= "botones_popup">
                     <button class="botones_popup_estilo" type="button" onclick="cerrar_ver_mis_cartas()"> Cerrar </button>

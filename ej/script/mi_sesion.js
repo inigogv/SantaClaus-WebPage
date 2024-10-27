@@ -134,31 +134,17 @@ function cerrar_mis_datos() {
     document.getElementById("mis_datos").style.display = "none";
 }
 
-/*
-function ver_mis_cartas() {
-    const usuario_activo = JSON.parse(localStorage.getItem("usuario_activo"));
-    const usuario = JSON.parse(localStorage.getItem(usuario_activo));
-    const cartas_usuario = usuario.cartas;
-
-    document.getElementById("ver_mis_cartas_popup").style.display = "flex";
-
-    for (let i = 0; i < cartas_usuario.length; i++) {
-        document.getElementById("cartas_usuario").innerHTML += generar_carta(cartas_usuario[i], i);
-    }   
-}
-*/
-
 function ver_mis_cartas() {
     const usuario_activo = JSON.parse(localStorage.getItem("usuario_activo"));
     const usuario = JSON.parse(localStorage.getItem(usuario_activo));
     
-    const contenedorCartas = document.getElementById("mis_cartas");
-    contenedorCartas.innerHTML = ''; // Limpiar el contenedor
+    const contenedor_cartas = document.getElementById("mis_cartas");
+    contenedor_cartas.innerHTML = ''; 
     document.getElementById("ver_mis_cartas_popup").style.display = "flex";
     
     if (usuario && usuario.cartas && usuario.cartas.length > 0) {
         usuario.cartas.forEach(carta => {
-            const cartaHTML = `
+            const carta_HTML = `
                 <li class="box"> 
                     <div class="datos_box">
                         <img class="foto_carta" src="${carta.imagen}" alt="Foto ${carta.nombre}">
@@ -172,32 +158,12 @@ function ver_mis_cartas() {
                     </div>
                 </li>
             `;
-            contenedorCartas.innerHTML += cartaHTML;
+            contenedor_cartas.innerHTML += carta_HTML;
         });
     } else {
-        contenedorCartas.innerHTML = '<p>No tienes cartas guardadas.</p>';
+        document.getElementById("mensaje_no_hay_cartas").style.display = "block";
     }
 }
-
-/*
-function generar_carta(carta, index) {
-    return `
-        <div class="box" draggable="true" ondragstart="drag(event, ${index})" ondrop="drop(event, ${index})" ondragover="allowDrop(event)">
-                <div class="datos_box">
-                    <img class="foto_carta" src="${carta.imagen}" alt="Foto ${carta.nombre}">
-                    <div class="datos">
-                        <p>${carta.nombre}</p>
-                        <p class="lugar_residencia">${carta.lugar}</p>
-                    </div>
-                </div>
-                <div class="texto_carta">
-                    <p>${carta.mensaje}</p>
-                </div>
-                <button onclick="eliminarCarta(${index})" class="eliminar_carta">Eliminar</button>
-            </div>
-        `;
-}
-*/
 
 function cerrar_ver_mis_cartas() {
     document.getElementById("ver_mis_cartas_popup").style.display = "none";
