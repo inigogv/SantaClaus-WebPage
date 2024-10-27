@@ -6,14 +6,13 @@
     <title>El mundo de Papá Noel</title>
     <link rel="stylesheet" href="style/styles.css">
     <link rel= "stylesheet" href="style/styles1_popups.css">
-    <link rel= "stylesheet" href="style/styles2_miperfil.css">
-    <link rel= "stylesheet" href="style/styles3_header.css">
-    <link rel= "stylesheet" href="style/styles4_home.css">
-    <link rel= "stylesheet" href="style/styles5_papanoel.css">
-    <link rel= "stylesheet" href="style/styles6_cartas.css">
-    <link rel= "stylesheet" href="style/styles7_micarta.css">
-    <link rel= "stylesheet" href="style/styles8_juegos.css">
-    <link rel= "stylesheet" href="style/styles9_footer.css">
+    <link rel= "stylesheet" href="style/styles2_header.css">
+    <link rel= "stylesheet" href="style/styles3_home.css">
+    <link rel= "stylesheet" href="style/styles4_papanoel.css">
+    <link rel= "stylesheet" href="style/styles5_cartas.css">
+    <link rel= "stylesheet" href="style/styles6_micarta.css">
+    <link rel= "stylesheet" href="style/styles7_juegos.css">
+    <link rel= "stylesheet" href="style/styles8_footer.css">
     <link rel="stylesheet" href="fonts/fonts.css">
     <script src="script/contador.js"></script>
     <script src="script/registro_popup.js"></script>
@@ -104,9 +103,7 @@
                                 <input class= "caja_escribir" type="number" id="mis_hijos" min="0" required>
                             </div>
                         </div> 
-                        <div id="formulario_hijos_ver_mis_datos">
-                            // Aquí se mostrarán los datos de los hijos
-                        </div>
+                        <div id="formulario_hijos_ver_mis_datos"> </div>
                     </form>
                     <div class="botones_popup">
                         <button class="botones_popup_estilo" type="button" onclick="guardar_datos()"> Guardar </button>
@@ -198,6 +195,13 @@
                         <button class="botones_popup_estilo" type="button" onclick="cancelar_inicio()"> Cancelar </button>
                     </div>
                 </form>
+            </div>
+        </section>
+
+        <section class= "section_ver_mis_cartas" id="ver_mis_cartas_popup">
+            <div class= "cuadrado_popup_mis_cartas">
+                <h3 class= "title_section_h3"> Mis cartas </h3>
+                <div id= "cartas_enviadas"> </div>
             </div>
         </section>
 

@@ -236,3 +236,115 @@
         font-size: 0.6em;
     }
 }
+
+#mi_perfil{
+    display: none;
+}
+
+.imagen_perfil{
+    width: 40px;
+    height: 40px;
+    padding-right: 20px;
+    cursor: pointer;
+}
+
+#menu_desplegable{
+    display: none;
+    position: fixed;
+    background-color: #ffffff95;
+    right: 0;
+    top: 54px;
+    flex-direction: column;
+}
+
+@media screen and (max-width:768px){
+    #menu_desplegable{    
+        top: 44px;
+    }
+}
+
+@media screen and (max-width:600px){
+    #menu_desplegable{
+        top: 40px;
+    }
+}
+
+.opciones_menu{
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+    list-style-type: none;
+    padding: 0 10px;
+}
+
+@media screen and (max-width:768px){
+    .opciones_menu{    
+        font-size: 0.8em;
+    }
+}
+
+@media screen and (max-width:600px){
+    .opciones_menu{
+        font-size: 0.7em;
+    }
+}
+
+.datos_perfil{
+    cursor: pointer;
+    padding-top: 5px;
+}
+
+.datos_perfil:hover{
+    color: #fff5e1;
+}
+
+.cartas_perfil{
+    cursor: pointer;
+    padding-top: 5px;
+}
+
+.cartas_perfil:hover{
+    color: #fff5e1;
+}
+
+.cerrar_perfil{
+    cursor: pointer;
+    padding-top: 5px;
+}
+
+.cerrar_perfil:hover{
+    color: #fff5e1;
+}
+
+.popup_perfil{
+    position: fixed;
+    background-color: #fffefee9;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    height: 60vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+.popup_perfil_mis_cartas{
+    position: fixed;
+    background-color: #fffefee9;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+#ver_mis_cartas_popup{
+    display: none;
+}

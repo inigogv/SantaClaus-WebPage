@@ -12,13 +12,12 @@ function entrar_cuenta() {
     const nombre_usuario = document.getElementById("nombre_inicio_sesion").value;
     const contraseña_usuario = document.getElementById("contraseña_inicio_sesion").value;
 
-    const usuario = JSON.parse(localStorage.getItem("usuario"));
+    const usuario = JSON.parse(localStorage.getItem(nombre_usuario));
 
-    if (nombre_usuario === usuario.nombre && contraseña_usuario === usuario.contraseña) {
-        usuario.activo = true;
+    if (usuario && contraseña_usuario === usuario.contraseña) {
         alert("Inicio de sesión correcto");
-        localStorage.setItem("usuario", JSON.stringify(usuario));
         document.getElementById("inicio_sesion_popup").style.display = "none";
+        localStorage.setItem("usuario_activo", JSON.stringify(nombre_usuario));
         perfil_barra_navegacion();
     } else {
         alert("Nombre de usuario o contraseña incorrectos");
@@ -41,8 +40,9 @@ function menu_desplegable() {
 }
 
 function ver_mis_datos() {
+    const usuario_activo = JSON.parse(localStorage.getItem("usuario_activo"));
     document.getElementById("mis_datos").style.display = "flex";
-    const usuario = JSON.parse(localStorage.getItem("usuario"));
+    const usuario = JSON.parse(localStorage.getItem(usuario_activo));
     if(usuario) {
         document.getElementById("mi_usuario").value = usuario.nombre;
         document.getElementById("mi_email").value = usuario.email;
@@ -57,7 +57,7 @@ function ver_mis_datos() {
 
         const num_hijos = usuario.num_hijos;
         const formulario_hijos = document.getElementById("formulario_hijos_ver_mis_datos");
-        formulario_hijos.innerHTML = ''; // Limpiar campos anteriores
+        formulario_hijos.innerHTML = ''; 
 
         for (let i = 1; i <= num_hijos; i++) {
             const campo = `
@@ -87,28 +87,42 @@ function ver_mis_datos() {
         }
 }
 
-
-
 function guardar_datos() {
-    const nombre_usuario = document.getElementById("nombre_usuario").value;
-    const email_usuario = document.getElementById("email_usuario").value;
-    const contraseña_usuario = document.getElementById("contraseña_usuario").value;
-    const ciudad_usuario = document.getElementById("ciudad_usuario").value;
-    const pais_usuario = document.getElementById("pais_usuario").value;
-    const genero = document.getElementById("genero").value;
-    const num_hijos = document.getElementById("num_hijos").value;
+    const usuario_activo = JSON.parse(localStorage.getItem("usuario_activo"));
+    const nombre_usuario = document.getElementById("mi_usuario").value;
+    const email_usuario = document.getElementById("mi_email").value;
+    const contraseña_usuario = document.getElementById("mi_contraseña").value;
+    const repetir_contraseña = document.getElementById("mi_repetir_contraseña").value;
+    const ciudad_usuario = document.getElementById("mi_ciudad").value;
+    const pais_usuario = document.getElementById("mi_pais").value;
+    const genero = document.getElementById("mi_genero").value;
+    const num_hijos = document.getElementById("mis_hijos").value;
 
     const usuario = {
         nombre: nombre_usuario,
         email: email_usuario,
         contraseña: contraseña_usuario,
+        repetir_contraseña: repetir_contraseña,
         ciudad: ciudad_usuario,
         pais: pais_usuario,
         genero: genero,
-        num_hijos: num_hijos
+        num_hijos: num_hijos,
+        hijos: []
     }
 
-    localStorage.setItem("usuario", JSON.stringify(usuario));
+    for (let i = 1; i <= num_hijos; i++) {
+        const nombre_hijo = document.getElementById(`nombre_hijo_${i}_mis_datos`).value;
+        const edad_hijo = document.getElementById(`edad_hijo_${i}_mis_datos`).value;
+        const juguetes_hijo = document.getElementById(`juguetes_hijo_${i}_mis_datos`).value;
+
+        usuario.hijos.push({
+            nombre: nombre_hijo,
+            edad: edad_hijo,
+            juguetes: juguetes_hijo
+        });
+    }
+
+    localStorage.setItem(usuario_activo, JSON.stringify(usuario));
     alert("Datos guardados correctamente");
     document.getElementById("mis_datos").style.display = "none";
 }
@@ -116,16 +130,17 @@ function guardar_datos() {
 function cerrar_mis_datos() {
     document.getElementById("mis_datos").style.display = "none";
 }
-/*
+
 function ver_mis_cartas() {
-    popup_cartas = document.getElementById("mis_cartas")
-    cartas_usuario = JSON.parse(localStorage.getItem("cartas_usuario")) || [];
+    const usuario_activo = JSON.parse(localStorage.getItem("usuario_activo"));
+    const usuario = JSON.parse(localStorage.getItem(usuario_activo));
+    const cartas_usuario = usuario.cartas;
 
-    popup_cartas.innerHTML = cartas_usuario.length > 0 
-    ? cartas_usuario.map((carta,index) => generar_carta(carta, index)).join(""): 
-    "<p>No has enviado ninguna carta</p>";
+    document.getElementById("ver_mis_cartas_popup").style.display = "flex";
 
-    document.getElementById("mis_cartas").style.display = "block";
+    for (let i = 0; i < cartas_usuario.length; i++) {
+        document.getElementById("cartas_usuario").innerHTML += generar_carta(cartas_usuario[i], i);
+    }   
 }
 
 function generar_carta(carta, index) {
@@ -145,10 +160,10 @@ function generar_carta(carta, index) {
             </div>
         `;
 }
-*/
 
 function enviar_carta() {
-    const usuario = JSON.parse(localStorage.getItem("usuario"));
+    const usuario_activo = JSON.parse(localStorage.getItem("usuario_activo"));
+    const usuario = JSON.parse(localStorage.getItem(usuario_activo));
 
     if (document.getElementById("mi_perfil").style.display === "none") {
         alert("Debes iniciar sesión para enviar una carta");
@@ -175,7 +190,7 @@ function enviar_carta() {
     };
 
     usuario.cartas.push(carta_usuario);
-    localStorage.setItem("usuario", JSON.stringify(usuario));
+    localStorage.setItem(usuario_activo, JSON.stringify(usuario));
     alert("Carta enviada correctamente");
     document.getElementById("formulario_mi_carta").reset();
 
@@ -187,6 +202,11 @@ function cerrar_sesion() {
         document.getElementById("mi_perfil").style.display = "none";
         document.getElementById("menu_desplegable").style.display = "none";
         document.getElementById("mis_datos").style.display = "none";
+
+        document.getElementById("nombre_inicio_sesion").value = "";
+        document.getElementById("contraseña_inicio_sesion").value = "";
+
+        localStorage.removeItem("usuario_activo");
     }
 }
 

@@ -4,7 +4,7 @@ function registro() {
 
 function formulario_hijos() {
     const num_hijos = document.getElementById('num_hijos').value;
-    const  datos_hijos= document.getElementById('formulario_hijos');
+    const datos_hijos= document.getElementById('formulario_hijos');
     datos_hijos.innerHTML = '';
 
     for (let i = 1; i <= num_hijos; i++) {
