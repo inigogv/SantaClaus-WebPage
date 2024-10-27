@@ -26,7 +26,7 @@ function entrar_cuenta() {
 
 function perfil_barra_navegacion() {
     document.getElementById("botones_registro_inicio").style.display = "none";
-    perfil_barra_navegacion = document.getElementById("mi_perfil").style.display = "flex";
+    document.getElementById("mi_perfil").style.display = "flex";
 }
 
 function menu_desplegable() {
@@ -131,6 +131,7 @@ function cerrar_mis_datos() {
     document.getElementById("mis_datos").style.display = "none";
 }
 
+/*
 function ver_mis_cartas() {
     const usuario_activo = JSON.parse(localStorage.getItem("usuario_activo"));
     const usuario = JSON.parse(localStorage.getItem(usuario_activo));
@@ -142,7 +143,39 @@ function ver_mis_cartas() {
         document.getElementById("cartas_usuario").innerHTML += generar_carta(cartas_usuario[i], i);
     }   
 }
+*/
 
+function ver_mis_cartas() {
+    const usuario_activo = JSON.parse(localStorage.getItem("usuario_activo"));
+    const usuario = JSON.parse(localStorage.getItem(usuario_activo));
+    
+    const contenedorCartas = document.getElementById("mis_cartas");
+    contenedorCartas.innerHTML = ''; // Limpiar el contenedor
+
+    if (usuario && usuario.cartas && usuario.cartas.length > 0) {
+        usuario.cartas.forEach(carta => {
+            const cartaHTML = `
+                <li class="box"> 
+                    <div class="datos_box">
+                        <img class="foto_carta" src="${carta.imagen}" alt="Foto ${carta.nombre}">
+                        <div class="datos">
+                            <p>${carta.nombre}</p>
+                            <p class="lugar_residencia">${carta.lugar}</p>
+                        </div>
+                    </div>
+                    <div class="texto_carta">
+                        <p>${carta.texto}</p>    
+                    </div>
+                </li>
+            `;
+            contenedorCartas.innerHTML += cartaHTML;
+        });
+    } else {
+        contenedorCartas.innerHTML = '<p>No tienes cartas guardadas.</p>';
+    }
+}
+
+/*
 function generar_carta(carta, index) {
     return `
         <div class="box" draggable="true" ondragstart="drag(event, ${index})" ondrop="drop(event, ${index})" ondragover="allowDrop(event)">
@@ -160,6 +193,7 @@ function generar_carta(carta, index) {
             </div>
         `;
 }
+*/
 
 function enviar_carta() {
     const usuario_activo = JSON.parse(localStorage.getItem("usuario_activo"));
