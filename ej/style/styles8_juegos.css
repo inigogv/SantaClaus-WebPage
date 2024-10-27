@@ -163,18 +163,24 @@
 }
 
 .espacio_juego{
-    height: 40vh;
+    height: 55vh;
 }
 
 @media screen and (max-width:1200px){
     .espacio_juego{
-        height: 40vh;
+        height: 50vh;
     }
 }
 
 @media screen and (max-width:768px){
     .espacio_juego{
         height: 30vh;
+    }
+}
+
+@media screen and (max-width:600px){
+    .espacio_juego{
+        height: 25vh;
     }
 }
 
@@ -353,12 +359,12 @@
 .datos_juego_adivina {
     font-family: "Open Sans", sans-serif;
     font-weight: 400;
-    font-size: 1.2em;
     width: 100%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     color: #daa520;
+    margin: 0;
 }
 
 @media screen and (max-width: 768px) {
@@ -371,6 +377,10 @@
     .datos_juego_adivina {
         font-size: 0.8em;
     }
+}
+
+.intentos_restantes{
+    margin:0;
 }
 
 #boton_salir_adivina {
@@ -420,22 +430,21 @@
 .texto_adivinar{
     font-family: "Open Sans", sans-serif;
     font-weight: 700;
-    font-size: 1.2em;
     color: #daa520;
-    padding-top: 50px;
+    padding-top: 20px;
     text-align: center;
 }
 
 @media screen and (max-width: 768px) {
     .texto_adivinar {
-        padding-top: 30px;
+        padding-top: 15px;
         font-size: 0.9em;
     }
 }
 
 @media screen and (max-width: 600px) {
     .texto_adivinar{
-        padding-top: 20px;
+        padding-top: 10px;
         font-size: 0.8em;
     }
 }
@@ -443,12 +452,12 @@
 .hueco_adivinar{
     display: block;
     text-align: center;
-    padding-top: 10px;
+    padding-top: 5px;
 }
 
 @media screen and (max-width: 768px) {
     .hueco_adivinar {
-        padding-top: 5px;
+        padding-top: 3px;
     }
 }
 
@@ -461,7 +470,7 @@
 .insertar_numero{
     font-family: "Open Sans", sans-serif;
     font-weight: 700;
-    font-size: 1.2em;
+    font-size: 1.1em;
     color: #daa520;
     text-align: center;
 }

@@ -64,9 +64,10 @@ function sumar_punto() {
 }
 
 function reducir_tiempo() {
-    tiempo_restante--;
-    document.getElementById("tiempo_circle").innerText = tiempo_restante;
-
+    if (tiempo_restante > 0){
+        tiempo_restante--;
+        document.getElementById("tiempo_circle").innerText = tiempo_restante;
+    }
     if (tiempo_restante == 0) {
         salir_del_juego_circle();
     }
