@@ -192,7 +192,7 @@ function guardar_usuario_localstorage() {
         });
     }
 
-    localStorage.setItem("usuario", JSON.stringify(usuario));
+    localStorage.setItem(nombre_usuario, JSON.stringify(usuario));
     alert("Usuario registrado con éxito.");
     document.getElementById("formulario_registro").reset();
     document.getElementById("formulario_hijos").innerHTML = "";
