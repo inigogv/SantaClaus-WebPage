@@ -120,11 +120,6 @@ function enviar_carta() {
         alert("Debes iniciar sesión para enviar una carta");
         return;
     }
-    
-    if (usuario.activo === false) {
-        alert("Debes iniciar sesión para enviar una carta");
-        return;
-    }
 
     const nombre = document.getElementById("nombre").value;
     const email = document.getElementById("email").value;
@@ -158,9 +153,6 @@ function cerrar_sesion() {
         document.getElementById("mi_perfil").style.display = "none";
         document.getElementById("menu_desplegable").style.display = "none";
         document.getElementById("mis_datos").style.display = "none";
-        const usuario = JSON.parse(localStorage.getItem("usuario"));
-        usuario.activo = false;
-        localStorage.setItem("usuario", JSON.stringify(usuario));
     }
 }
 

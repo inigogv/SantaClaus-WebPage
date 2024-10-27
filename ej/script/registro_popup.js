@@ -164,7 +164,6 @@ function guardar_usuario_localstorage() {
         num_hijos: num_hijos,
         hijos: [],
         cartas: [],
-        activo: false
     };
 
     for (let i = 1; i <= num_hijos; i++) {
@@ -185,5 +184,3 @@ function guardar_usuario_localstorage() {
     document.getElementById("formulario_hijos").innerHTML = "";
     document.getElementById("registro_popup").style.display = "none";
 }
-
-
