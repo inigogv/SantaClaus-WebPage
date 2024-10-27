@@ -52,6 +52,32 @@ function ver_mis_datos() {
         document.getElementById("mi_pais").value = usuario.pais;
         document.getElementById("mi_genero").value = usuario.genero;
         document.getElementById("mis_hijos").value = usuario.num_hijos;
+
+        const formulario_hijos = document.getElementById("formulario_hijos_mis_datos");
+        formulario_hijos.innerHTML = ''; // Limpiar campos anteriores
+
+        if (usuario.hijos && usuario.hijos.length > 0) {
+            usuario.hijos.forEach((hijo, index) => {
+                const hijoHTML = `
+                    <div class="hijo">
+                        <p class="titulo_hijo">Hijo/hija ${index + 1}</p>
+                        <div class="caja_label_popup">
+                            <label class="etiqueta_cajas_popup">Nombre:</label>
+                            <input type="text" class="caja_escribir" value="${hijo.nombre}" readonly>
+                        </div>
+                        <div class="caja_label_popup">
+                            <label class="etiqueta_cajas_popup">Edad:</label>
+                            <input type="number" class="caja_escribir" value="${hijo.edad}" readonly>
+                        </div>
+                        <div class="caja_label_popup">
+                            <label class="etiqueta_cajas_popup">Juguetes favoritos:</label>
+                            <input type="text" class="caja_escribir" value="${hijo.juguetes}" readonly>
+                        </div>
+                    </div>
+                `;
+                formulario_hijos.innerHTML += hijoHTML;
+            });
+        }
     }
 }
 

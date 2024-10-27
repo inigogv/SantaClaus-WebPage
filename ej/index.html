@@ -50,7 +50,7 @@
             </div>
             <div id="menu_desplegable">
                 <ul class="opciones_menu">
-                    <li><a class="datos_perfil" onclick="ver_mis_datos()">Mi perfil</a></li>
+                    <li class="datos_perfil" onclick="ver_mis_datos()">Mi perfil</li>
                     <li class="cartas_perfil" onclick="ver_mis_cartas()">Mis cartas</li>
                     <li class="cerrar_perfil" onclick="cerrar_sesion()">Cerrar sesión</li>
                 </ul>
@@ -104,6 +104,9 @@
                                 <input class= "caja_escribir" type="number" id="mis_hijos" min="0" required>
                             </div>
                         </div> 
+                        <div id="formulario_hijos_ver_mis_datos">
+                            // Aquí se mostrarán los datos de los hijos
+                        </div>
                     </form>
                     <div class="botones_popup">
                         <button class="botones_popup_estilo" type="button" onclick="guardar_datos()"> Guardar </button>

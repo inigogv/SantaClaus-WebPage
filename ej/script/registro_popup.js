@@ -140,6 +140,20 @@ function validar_registro() {
         alert("El número de hijos debe der como mínimo 0.");
     }
 
+    if (num_hijos.value > 0) {
+        for (let i = 1; i <= num_hijos.value; i++) {
+            const nombre_hijo = document.getElementById(`nombre_hijo_${i}`).value;
+            const edad_hijo = document.getElementById(`edad_hijo_${i}`).value;
+            const juguetes_hijo = document.getElementById(`juguetes_hijo_${i}`).value;
+
+            if (!nombre_hijo || !edad_hijo || juguetes_hijo.trim() === "") {
+                se_puede_aceptar = false;
+                alert(`Por favor, complete todos los campos del hijo/hija ${i}.`);
+                break;
+            }
+        }
+    }
+
     if (se_puede_aceptar) {
         guardar_usuario_localstorage();
     }
