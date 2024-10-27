@@ -116,6 +116,11 @@ function generar_carta(carta, index) {
 function enviar_carta() {
     const usuario = JSON.parse(localStorage.getItem("usuario"));
 
+    if (document.getElementById("mi_perfil").style.display === "none") {
+        alert("Debes iniciar sesión para enviar una carta");
+        return;
+    }
+    
     if (usuario.activo === false) {
         alert("Debes iniciar sesión para enviar una carta");
         return;
