@@ -62,24 +62,24 @@ function ver_mis_datos() {
                     <p class="titulo_hijo">Hijo/hija ${i}</p>
                     <div class="cajas_agrupadas">
                         <div class="caja_label_popup">
-                            <label class= "etiqueta_cajas_popup" for="nombre_hijo_${i}">Nombre</label>
-                            <input class = "caja_escribir" type="text" id="nombre_hijo_${i}" minlength="3" required placeholder="Nombre">
+                            <label class= "etiqueta_cajas_popup" for="nombre_hijo_${i}_mis_datos">Nombre</label>
+                            <input class = "caja_escribir" type="text" id="nombre_hijo_${i}_mis_datos" minlength="3" required placeholder="Nombre">
                         </div>
                         <div class="caja_label_popup">
-                            <label class= "etiqueta_cajas_popup" for="edad_hijo_${i}">Edad</label>
-                            <input class = "caja_escribir" type="number" id="edad_hijo_${i}" min="0" required placeholder="Edad">
+                            <label class= "etiqueta_cajas_popup" for="edad_hijo_${i}_mis_datos">Edad</label>
+                            <input class = "caja_escribir" type="number" id="edad_hijo_${i}_mis_datos" min="0" required placeholder="Edad">
                         </div>
                     </div>
                     <div class="caja_label_popup">
-                        <label class= "etiqueta_cajas_popup" for="juguetes_hijo_${i}">Juguetes favoritos</label>
-                        <input class = "caja_escribir" type="text" id="juguetes_hijo_${i}" placeholder="Juguetes favoritos">
+                        <label class= "etiqueta_cajas_popup" for="juguetes_hijo_${i}_mis_datos">Juguetes favoritos</label>
+                        <input class = "caja_escribir" type="text" id="juguetes_hijo_${i}_mis_datos" placeholder="Juguetes favoritos">
                     </div>
                 </div>
                 `;
             formulario_hijos.innerHTML += campo;
-            document.getElementById(`nombre_hijo_${i}`).value = usuario.hijos[i-1].nombre;
-            document.getElementById(`edad_hijo_${i}`).value = usuario.hijos[i-1].edad;
-            document.getElementById(`juguetes_hijo_${i}`).value = usuario.hijos[i-1].juguetes;
+            document.getElementById(`nombre_hijo_${i}_mis_datos`).value = usuario.hijos[i-1].nombre;
+            document.getElementById(`edad_hijo_${i}_mis_datos`).value = usuario.hijos[i-1].edad;
+            document.getElementById(`juguetes_hijo_${i}_mis_datos`).value = usuario.hijos[i-1].juguetes;
             }
         }
 }
