@@ -44,14 +44,14 @@ function ver_mis_datos() {
     document.getElementById("mis_datos").style.display = "flex";
     const usuario = JSON.parse(localStorage.getItem("usuario"));
     if(usuario) {
-        document.getElementById("nombre_usuario").value = usuario.nombre;
-        document.getElementById("email_usuario").value = usuario.email;
-        document.getElementById("contraseña_usuario").value = usuario.contraseña;
-        document.getElementById("repetir_contraseña_usuario").value = usuario.contraseña;
-        document.getElementById("ciudad_usuario").value = usuario.ciudad;
-        document.getElementById("pais_usuario").value = usuario.pais;
-        document.getElementById("genero").value = usuario.genero;
-        document.getElementById("num_hijos").value = usuario.num_hijos;
+        document.getElementById("mi_usuario").value = usuario.nombre;
+        document.getElementById("mi_email").value = usuario.email;
+        document.getElementById("mi_contraseña").value = usuario.contraseña;
+        document.getElementById("mi_repetir_contraseña").value = usuario.contraseña;
+        document.getElementById("mi_ciudad").value = usuario.ciudad;
+        document.getElementById("mi_pais").value = usuario.pais;
+        document.getElementById("mi_genero").value = usuario.genero;
+        document.getElementById("mis_hijos").value = usuario.num_hijos;
     }
 }
 
@@ -146,6 +146,7 @@ function enviar_carta() {
     document.getElementById("formulario_mi_carta").reset();
 
 }
+
 function cerrar_sesion() {
     if (confirm("¿Estás seguro de que deseas cerrar sesión?")) {
         document.getElementById("botones_registro_inicio").style.display = "flex";
