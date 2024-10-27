@@ -53,33 +53,37 @@ function ver_mis_datos() {
         document.getElementById("mi_genero").value = usuario.genero;
         document.getElementById("mis_hijos").value = usuario.num_hijos;
 
-        const formulario_hijos = document.getElementById("formulario_hijos_mis_datos");
+        const formulario_hijos = document.getElementById("formulario_hijos_ver_mis_datos");
         formulario_hijos.innerHTML = ''; // Limpiar campos anteriores
 
-        if (usuario.hijos && usuario.hijos.length > 0) {
-            usuario.hijos.forEach((hijo, index) => {
-                const hijoHTML = `
-                    <div class="hijo">
-                        <p class="titulo_hijo">Hijo/hija ${index + 1}</p>
+        for (let i = 1; i <= num_hijos; i++) {
+            const campo = `
+                <div class="hijo">
+                    <p class="titulo_hijo">Hijo/hija ${i}</p>
+                    <div class="cajas_agrupadas">
                         <div class="caja_label_popup">
-                            <label class="etiqueta_cajas_popup">Nombre:</label>
-                            <input type="text" class="caja_escribir" value="${hijo.nombre}" readonly>
+                            <label class= "etiqueta_cajas_popup" for="nombre_hijo_${i}">Nombre</label>
+                            <input class = "caja_escribir" type="text" id="nombre_hijo_${i}" minlength="3" required placeholder="Nombre">
                         </div>
                         <div class="caja_label_popup">
-                            <label class="etiqueta_cajas_popup">Edad:</label>
-                            <input type="number" class="caja_escribir" value="${hijo.edad}" readonly>
-                        </div>
-                        <div class="caja_label_popup">
-                            <label class="etiqueta_cajas_popup">Juguetes favoritos:</label>
-                            <input type="text" class="caja_escribir" value="${hijo.juguetes}" readonly>
+                            <label class= "etiqueta_cajas_popup" for="edad_hijo_${i}">Edad</label>
+                            <input class = "caja_escribir" type="number" id="edad_hijo_${i}" min="0" required placeholder="Edad">
                         </div>
                     </div>
+                    <div class="caja_label_popup">
+                        <label class= "etiqueta_cajas_popup" for="juguetes_hijo_${i}">Juguetes favoritos</label>
+                        <input class = "caja_escribir" type="text" id="juguetes_hijo_${i}" placeholder="Juguetes favoritos">
+                    </div>
+                </div>
                 `;
-                formulario_hijos.innerHTML += hijoHTML;
-            });
+            formulario_hijos.innerHTML += campo;
+            document.getElementById(`nombre_hijo_${i}`).value = usuario.hijos[i-1].nombre;
+            document.getElementById(`edad_hijo_${i}`).value = usuario.hijos[i-1].edad;
+            document.getElementById(`juguetes_hijo_${i}`).value = usuario.hijos[i-1].juguetes;
+            }
         }
-    }
 }
+
 
 function guardar_datos() {
     const nombre_usuario = document.getElementById("nombre_usuario").value;
