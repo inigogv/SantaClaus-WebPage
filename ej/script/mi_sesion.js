@@ -147,10 +147,11 @@ function ver_mis_cartas() {
             const carta_HTML = `
                 <li class="box"> 
                     <div class="datos_box">
-                        <img class="foto_carta" src="${carta.imagen}" alt="Foto ${carta.nombre}">
+                        <img class="foto_carta" src="images/foto_cartas.jpg" alt="Foto ${carta.nombre}">
                         <div class="datos">
                             <p>${carta.nombre}</p>
-                            <p class="lugar_residencia">${carta.lugar}</p>
+                            <p class="lugar_residencia">${carta.ciudad}</p>
+                            <p class="lugar_residencia">${carta.pais}</p>
                         </div>
                     </div>
                     <div class="texto_carta">
@@ -173,7 +174,7 @@ function enviar_carta() {
     const usuario_activo = JSON.parse(localStorage.getItem("usuario_activo"));
     const usuario = JSON.parse(localStorage.getItem(usuario_activo));
 
-    if (document.getElementById("mi_perfil").style.display === "none") {
+    if (window.getComputedStyle(document.getElementById("mi_perfil")).display === "none") {
         alert("Debes iniciar sesión para enviar una carta");
         return;
     }
