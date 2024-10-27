@@ -360,6 +360,22 @@
     display: none;
 }
 
+.boxes_section_micarta{
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.boxes_micarta{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+}
+
 #mensaje_no_hay_cartas{
     font-family: "Open Sans", sans-serif;
     font-weight: 700;

@@ -150,12 +150,11 @@ function ver_mis_cartas() {
                         <img class="foto_carta" src="images/foto_cartas.jpg" alt="Foto ${carta.nombre}">
                         <div class="datos">
                             <p>${carta.nombre}</p>
-                            <p class="lugar_residencia">${carta.ciudad}</p>
-                            <p class="lugar_residencia">${carta.pais}</p>
+                            <p class="lugar_residencia">${carta.ciudad}, ${carta.pais}</p>
                         </div>
                     </div>
                     <div class="texto_carta">
-                        <p>${carta.texto}</p>    
+                        <p>${carta.carta}</p>    
                     </div>
                 </li>
             `;
