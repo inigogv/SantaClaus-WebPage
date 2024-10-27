@@ -199,6 +199,10 @@ function generar_carta(carta, index) {
 }
 */
 
+function cerrar_ver_mis_cartas() {
+    document.getElementById("ver_mis_cartas_popup").style.display = "none";
+}
+
 function enviar_carta() {
     const usuario_activo = JSON.parse(localStorage.getItem("usuario_activo"));
     const usuario = JSON.parse(localStorage.getItem(usuario_activo));
