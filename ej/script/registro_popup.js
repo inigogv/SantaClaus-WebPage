@@ -163,12 +163,15 @@ function guardar_usuario_localstorage() {
         genero: genero,
         num_hijos: num_hijos,
         hijos: [],
+        cartas: [],
+        activo: false
     };
 
     for (let i = 1; i <= num_hijos; i++) {
-        const nombre_hijo = document.getElementById("nombre_hijo_${i}").value;
-        const edad_hijo = document.getElementById("edad_hijo_${i}").value;
-        const juguetes_hijo = document.getElementById("juguetes_hijo_${i}").value;
+        const nombre_hijo = document.getElementById(`nombre_hijo_${i}`).value;
+        const edad_hijo = document.getElementById(`edad_hijo_${i}`).value;
+        const juguetes_hijo = document.getElementById(`juguetes_hijo_${i}`).value;
+
 
 
         usuario.hijos.push({

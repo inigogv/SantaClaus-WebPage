@@ -15,9 +15,9 @@ function entrar_cuenta() {
     const usuario = JSON.parse(localStorage.getItem("usuario"));
 
     if (nombre_usuario === usuario.nombre && contraseña_usuario === usuario.contraseña) {
-        const usuario_activo = true;
+        usuario.activo = true;
         alert("Inicio de sesión correcto");
-        localStorage.setItem("Activo", JSON.stringify(usuario_activo));
+        localStorage.setItem("usuario", JSON.stringify(usuario));
         document.getElementById("inicio_sesion_popup").style.display = "none";
         perfil_barra_navegacion();
     } else {
@@ -115,9 +115,8 @@ function generar_carta(carta, index) {
 
 function enviar_carta() {
     const usuario = JSON.parse(localStorage.getItem("usuario"));
-    const usuario_activo = JSON.parse(localStorage.getItem("Activo"));
 
-    if (usuario_activo === false) {
+    if (usuario.activo === false) {
         alert("Debes iniciar sesión para enviar una carta");
         return;
     }
@@ -141,9 +140,8 @@ function enviar_carta() {
         carta: carta
     };
 
-    let cartas = JSON.parse(localStorage.getItem("cartas_enviadas")) || [];
-    cartas.push(carta_usuario);
-    localStorage.setItem("cartas_enviadas", JSON.stringify(cartas));
+    usuario.cartas.push(carta_usuario);
+    localStorage.setItem("usuario", JSON.stringify(usuario));
     alert("Carta enviada correctamente");
     document.getElementById("formulario_mi_carta").reset();
 
@@ -154,8 +152,9 @@ function cerrar_sesion() {
         document.getElementById("mi_perfil").style.display = "none";
         document.getElementById("menu_desplegable").style.display = "none";
         document.getElementById("mis_datos").style.display = "none";
-        const usuario_activo = false;
-        localStorage.setItem("Activo", JSON.stringify(usuario_activo));
+        const usuario = JSON.parse(localStorage.getItem("usuario"));
+        usuario.activo = false;
+        localStorage.setItem("usuario", JSON.stringify(usuario));
     }
 }
 
