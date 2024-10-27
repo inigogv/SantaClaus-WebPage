@@ -141,7 +141,8 @@ function ver_mis_cartas() {
     const contenedor_cartas = document.getElementById("mis_cartas");
     contenedor_cartas.innerHTML = ''; 
     document.getElementById("ver_mis_cartas_popup").style.display = "flex";
-    
+    document.getElementById("mensaje_no_hay_cartas").style.display = "none";
+
     if (usuario && usuario.cartas && usuario.cartas.length > 0) {
         usuario.cartas.forEach((carta, index) => {
             const carta_HTML = `
@@ -163,7 +164,8 @@ function ver_mis_cartas() {
             `;
             contenedor_cartas.innerHTML += carta_HTML;
         });
-    } else {
+    } 
+    else {
         document.getElementById("mensaje_no_hay_cartas").style.display = "block";
     }
 }
@@ -172,9 +174,10 @@ function borrar_carta(index) {
     const usuario_activo = JSON.parse(localStorage.getItem("usuario_activo"));
     const usuario = JSON.parse(localStorage.getItem(usuario_activo));
     
-    usuario.cartas.splice(index, 1);
-    localStorage.setItem(usuario_activo, JSON.stringify(usuario));
-
+    if (confirm("¿Está seguro de que quiere borrar la carta?")) {
+        usuario.cartas.splice(index, 1);
+        localStorage.setItem(usuario_activo, JSON.stringify(usuario));
+    }
     ver_mis_cartas();
 }
 
