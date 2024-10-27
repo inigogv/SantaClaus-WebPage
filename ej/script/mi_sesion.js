@@ -143,9 +143,9 @@ function ver_mis_cartas() {
     document.getElementById("ver_mis_cartas_popup").style.display = "flex";
     
     if (usuario && usuario.cartas && usuario.cartas.length > 0) {
-        usuario.cartas.forEach(carta => {
+        usuario.cartas.forEach((carta, index) => {
             const carta_HTML = `
-                <li class="box"> 
+                <li class="box_micarta"> 
                     <div class="datos_box">
                         <img class="foto_carta" src="images/foto_cartas.jpg" alt="Foto ${carta.nombre}">
                         <div class="datos">
@@ -156,6 +156,9 @@ function ver_mis_cartas() {
                     <div class="texto_carta">
                         <p>${carta.carta}</p>    
                     </div>
+                    <div class= "botones_popup_borrar_carta">
+                        <button class="botones_popup_estilo_borrar_carta" type="button" onclick="borrar_carta(${index})"> Borrar </button>
+                    </div>
                 </li>
             `;
             contenedor_cartas.innerHTML += carta_HTML;
@@ -163,6 +166,16 @@ function ver_mis_cartas() {
     } else {
         document.getElementById("mensaje_no_hay_cartas").style.display = "block";
     }
+}
+
+function borrar_carta(index) {
+    const usuario_activo = JSON.parse(localStorage.getItem("usuario_activo"));
+    const usuario = JSON.parse(localStorage.getItem(usuario_activo));
+    
+    usuario.cartas.splice(index, 1);
+    localStorage.setItem(usuario_activo, JSON.stringify(usuario));
+
+    ver_mis_cartas();
 }
 
 function cerrar_ver_mis_cartas() {
