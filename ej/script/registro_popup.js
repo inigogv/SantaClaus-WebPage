@@ -172,8 +172,6 @@ function guardar_usuario_localstorage() {
         const edad_hijo = document.getElementById(`edad_hijo_${i}`).value;
         const juguetes_hijo = document.getElementById(`juguetes_hijo_${i}`).value;
 
-
-
         usuario.hijos.push({
             nombre: nombre_hijo,
             edad: edad_hijo,
