@@ -53,6 +53,9 @@ function ver_mis_datos() {
         document.getElementById("mi_genero").value = usuario.genero;
         document.getElementById("mis_hijos").value = usuario.num_hijos;
 
+        document.getElementById("formulario_hijos_ver_mis_datos").style.display = "block";
+
+        const num_hijos = usuario.num_hijos;
         const formulario_hijos = document.getElementById("formulario_hijos_ver_mis_datos");
         formulario_hijos.innerHTML = ''; // Limpiar campos anteriores
 
@@ -83,6 +86,7 @@ function ver_mis_datos() {
             }
         }
 }
+
 
 
 function guardar_datos() {
