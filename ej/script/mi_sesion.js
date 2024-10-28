@@ -151,12 +151,12 @@ function ver_mis_cartas() {
 
     if (usuario && usuario.cartas && usuario.cartas.length > 0) {
         usuario.cartas.forEach((carta, index) => {
-            const cartaElemento = document.createElement("li");
-            cartaElemento.classList.add("box_micarta");
-            cartaElemento.setAttribute("draggable", true);
-            cartaElemento.setAttribute("data-index", index);
+            const carta_elemento = document.createElement("li");
+            carta_elemento.classList.add("box_micarta");
+            carta_elemento.setAttribute("draggable", true);
+            carta_elemento.setAttribute("data-index", index);
 
-            cartaElemento.innerHTML = `
+            carta_elemento.innerHTML = `
                 <div class="datos_box">
                     <img class="foto_carta" src="images/foto_cartas.jpg" alt="Foto ${carta.nombre}">
                     <div class="datos">
@@ -172,13 +172,12 @@ function ver_mis_cartas() {
                 </div>
             `;
 
-            
-            cartaElemento.addEventListener("dragstart", empezar_arrastre);
-            cartaElemento.addEventListener("dragover", acabar_arrastre);
-            cartaElemento.addEventListener("drop", (e) => drop(e, usuario));
-            cartaElemento.addEventListener("dragend", fin_arrastre);
+            carta_elemento.addEventListener("dragstart", empezar_arrastre);
+            carta_elemento.addEventListener("dragover", acabar_arrastre);
+            carta_elemento.addEventListener("drop", (e) => soltar(e, usuario));
+            carta_elemento.addEventListener("dragend", fin_arrastre);
 
-            contenedor_cartas.appendChild(cartaElemento);
+            contenedor_cartas.appendChild(carta_elemento);
         });
     } else {
         document.getElementById("mensaje_no_hay_cartas").style.display = "block";
@@ -192,26 +191,24 @@ function empezar_arrastre(e) {
 
 function acabar_arrastre(e) {
     e.preventDefault(); 
-    const afterElement = encontrar_elemento(e.clientY);
+    const elemento_referente = encontrar_elemento(e.clientY);
     const contenedor_cartas = document.getElementById("mis_cartas");
 
-    if (afterElement == null) {
+    if (elemento_referente == null) {
         contenedor_cartas.appendChild(document.querySelector(".dragging"));
     } else {
-        contenedor_cartas.insertBefore(document.querySelector(".dragging"), afterElement);
+        contenedor_cartas.insertBefore(document.querySelector(".dragging"), elemento_referente);
     }
 }
 
-function drop(e, usuario) {
+function soltar(e, usuario) {
     e.preventDefault();
-    const draggedIndex = e.dataTransfer.getData("text/plain");
-    const targetIndex = e.target.closest("li").dataset.index;
-
+    const indice_arrastrado = e.dataTransfer.getData("text/plain");
+    const indice_destino = e.target.closest("li").dataset.index;
    
-    const draggedCarta = usuario.cartas.splice(draggedIndex, 1)[0];
-    usuario.cartas.splice(targetIndex, 0, draggedCarta);
+    const draggedCarta = usuario.cartas.splice(indice_arrastrado, 1)[0];
+    usuario.cartas.splice(indice_destino, 0, draggedCarta);
 
-    
     localStorage.setItem(usuario.nombre, JSON.stringify(usuario));
     ver_mis_cartas(); 
 }
@@ -220,10 +217,10 @@ function fin_arrastre() {
     document.querySelector(".dragging").classList.remove("dragging");
 }
 
-function encontrar_elemnto(y) {
-    const draggableElements = [...document.querySelectorAll(".box_micarta:not(.dragging)")];
+function encontrar_elemento(y) {
+    const elementos_intercambiables = [...document.querySelectorAll(".box_micarta:not(.dragging)")];
     
-    return draggableElements.reduce((closest, child) => {
+    return elementos_intercambiables.reduce((closest, child) => {
         const box = child.getBoundingClientRect();
         const offset = y - box.top - box.height / 2;
         if (offset < 0 && offset > closest.offset) {
