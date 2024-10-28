@@ -97,8 +97,8 @@ function guardar_datos() {
     const pais_usuario = document.getElementById("mi_pais").value;
     const genero = document.getElementById("mi_genero").value;
     const num_hijos = document.getElementById("mis_hijos").value;
-    const cartas_usuario = JSON.parse(localStorage.getItem("usuario_activo")).cartas || [];
-    const hijos = JSON.parse(localStorage.getItem("usuario_activo")).hijos || [];
+    const cartas_usuario = JSON.parse(localStorage.getItem(usuario_activo)).cartas || [];
+    const hijos = JSON.parse(localStorage.getItem(usuario_activo)).hijos || [];
 
     const usuario = {
         nombre: nombre_usuario,
@@ -123,9 +123,15 @@ function guardar_datos() {
             edad: edad_hijo,
             juguetes: juguetes_hijo
         });
-    }
 
-    localStorage.setItem(usuario_activo, JSON.stringify(usuario));
+    }
+    if (nombre_usuario !== usuario_activo) {
+        localStorage.setItem(nombre_usuario, JSON.stringify(usuario));
+        localStorage.removeItem(usuario_activo);
+        localStorage.setItem("usuario_activo", JSON.stringify(nombre_usuario));
+    } else {
+        localStorage.setItem(usuario_activo, JSON.stringify(usuario));
+    }
     alert("Datos guardados correctamente");
     document.getElementById("mis_datos").style.display = "none";
 }
@@ -145,30 +151,89 @@ function ver_mis_cartas() {
 
     if (usuario && usuario.cartas && usuario.cartas.length > 0) {
         usuario.cartas.forEach((carta, index) => {
-            const carta_HTML = `
-                <li class="box_micarta"> 
-                    <div class="datos_box">
-                        <img class="foto_carta" src="images/foto_cartas.jpg" alt="Foto ${carta.nombre}">
-                        <div class="datos">
-                            <p>${carta.nombre}</p>
-                            <p class="lugar_residencia">${carta.ciudad}, ${carta.pais}</p>
-                        </div>
+            const cartaElemento = document.createElement("li");
+            cartaElemento.classList.add("box_micarta");
+            cartaElemento.setAttribute("draggable", true);
+            cartaElemento.setAttribute("data-index", index);
+
+            cartaElemento.innerHTML = `
+                <div class="datos_box">
+                    <img class="foto_carta" src="images/foto_cartas.jpg" alt="Foto ${carta.nombre}">
+                    <div class="datos">
+                        <p>${carta.nombre}</p>
+                        <p class="lugar_residencia">${carta.ciudad}, ${carta.pais}</p>
                     </div>
-                    <div class="texto_carta">
-                        <p>${carta.carta}</p>    
-                    </div>
-                    <div class= "botones_popup_borrar_carta">
-                        <button class="botones_popup_estilo_borrar_carta" type="button" onclick="borrar_carta(${index})"> Borrar </button>
-                    </div>
-                </li>
+                </div>
+                <div class="texto_carta">
+                    <p>${carta.carta}</p>    
+                </div>
+                <div class="botones_popup_borrar_carta">
+                    <button class="botones_popup_estilo_borrar_carta" type="button" onclick="borrar_carta(${index})">Borrar</button>
+                </div>
             `;
-            contenedor_cartas.innerHTML += carta_HTML;
+
+            
+            cartaElemento.addEventListener("dragstart", empezar_arrastre);
+            cartaElemento.addEventListener("dragover", acabar_arrastre);
+            cartaElemento.addEventListener("drop", (e) => drop(e, usuario));
+            cartaElemento.addEventListener("dragend", fin_arrastre);
+
+            contenedor_cartas.appendChild(cartaElemento);
         });
-    } 
-    else {
+    } else {
         document.getElementById("mensaje_no_hay_cartas").style.display = "block";
     }
 }
+
+function empezar_arrastre(e) {
+    e.dataTransfer.setData("text/plain", e.target.dataset.index);
+    e.target.classList.add("dragging");
+}
+
+function acabar_arrastre(e) {
+    e.preventDefault(); 
+    const afterElement = encontrar_elemento(e.clientY);
+    const contenedor_cartas = document.getElementById("mis_cartas");
+
+    if (afterElement == null) {
+        contenedor_cartas.appendChild(document.querySelector(".dragging"));
+    } else {
+        contenedor_cartas.insertBefore(document.querySelector(".dragging"), afterElement);
+    }
+}
+
+function drop(e, usuario) {
+    e.preventDefault();
+    const draggedIndex = e.dataTransfer.getData("text/plain");
+    const targetIndex = e.target.closest("li").dataset.index;
+
+   
+    const draggedCarta = usuario.cartas.splice(draggedIndex, 1)[0];
+    usuario.cartas.splice(targetIndex, 0, draggedCarta);
+
+    
+    localStorage.setItem(usuario.nombre, JSON.stringify(usuario));
+    ver_mis_cartas(); 
+}
+
+function fin_arrastre() {
+    document.querySelector(".dragging").classList.remove("dragging");
+}
+
+function encontrar_elemnto(y) {
+    const draggableElements = [...document.querySelectorAll(".box_micarta:not(.dragging)")];
+    
+    return draggableElements.reduce((closest, child) => {
+        const box = child.getBoundingClientRect();
+        const offset = y - box.top - box.height / 2;
+        if (offset < 0 && offset > closest.offset) {
+            return { offset: offset, element: child };
+        } else {
+            return closest;
+        }
+    }, { offset: Number.NEGATIVE_INFINITY }).element;
+}
+
 
 function borrar_carta(index) {
     const usuario_activo = JSON.parse(localStorage.getItem("usuario_activo"));
