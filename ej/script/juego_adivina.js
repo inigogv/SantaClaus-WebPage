@@ -65,9 +65,3 @@ function reiniciar_juego_adivina() {
     mostrar_iniciar_juego_adivina_el_numero();
     iniciar_juego_adivina_el_numero();
 }
-
-function mostrar_imagen(ruta_imagen) {
-    document.getElementById("juego_adivina_el_numero").style.display = "none";
-    document.getElementById("img_juego").style.display = "block";
-    document.getElementById("img_juego").src = ruta_imagen;
-}

@@ -94,7 +94,8 @@ function mostrar_imagen(ruta_imagen) {
     clearInterval(intervalo_tiempo);
     clearInterval(intervalo_movimiento);
 
-    document.getElementById('juego_click_the_circle').style.display = "none";
-    document.getElementById('img_juego').style.display = "block";
-    document.getElementById('img_juego').src = ruta_imagen;
+    document.getElementById("juego_click_the_circle").style.display = "none";
+    document.getElementById("juego_adivina_el_numero").style.display = "none";
+    document.getElementById("img_juego").style.display = "block";
+    document.getElementById("img_juego").src = ruta_imagen;
 }
